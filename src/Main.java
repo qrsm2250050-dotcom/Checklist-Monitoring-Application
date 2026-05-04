@@ -66,7 +66,7 @@ public class Main {
 
     }
     // xml methods
-    private static boolean updateCourseGrade(Document doc, String targetCourse, String newGrade) {
+    public static boolean updateCourseGrade(Document doc, String targetCourse, String newGrade) {
         NodeList courseList = doc.getElementsByTagName("Course");
         boolean updated = false;
 
@@ -91,7 +91,7 @@ public class Main {
         return updated;
     }
 
-    private static void saveXMLDocument(Document doc, String filePath) {
+    public static void saveXMLDocument(Document doc, String filePath) {
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -107,4 +107,5 @@ public class Main {
         }
     // end of xml methods
 
+}
 }
