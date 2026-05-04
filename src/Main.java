@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-
 import java.util.Scanner;
 import java.io.File;
 
@@ -124,6 +123,10 @@ public class Main {
                             if (success) {
                                 saveXMLDocument(doc, filePath);
                                 System.out.println(">>> Course successfully added!");
+
+                                // === CALL THE NEW METHOD WITH YEAR AND TERM ===
+                                displayTermCoursesAlphabetically(doc, targetYear, targetTerm);
+
                             } else {
                                 System.out.println(">>> Error: Could not find the specified Year and Term in the XML.");
                             }
@@ -378,5 +381,65 @@ public class Main {
                     cNumber, title, units, prereq, grade);
         }
         System.out.println("-".repeat(130));
+    }
+    /**
+     * Extracts courses for a specific Year and Term, sorts them alphabetically by
+     * Course Number, and displays them in a formatted table.
+     */
+    public static void displayTermCoursesAlphabetically(Document doc, String yearLevel, String termName) {
+        NodeList yearNodes = doc.getElementsByTagName("Year");
+
+        for (int i = 0; i < yearNodes.getLength(); i++) {
+            Element yearElement = (Element) yearNodes.item(i);
+
+            if (yearElement.getAttribute("level").equals(yearLevel)) {
+                NodeList termNodes = yearElement.getElementsByTagName("Term");
+
+                for (int j = 0; j < termNodes.getLength(); j++) {
+                    Element termElement = (Element) termNodes.item(j);
+
+                    if (termElement.getAttribute("name").equalsIgnoreCase(termName)) {
+
+                        // 1. Extract courses ONLY for this specific term
+                        NodeList courseNodes = termElement.getElementsByTagName("Course");
+                        List<Element> courseList = new ArrayList<>();
+
+                        for (int k = 0; k < courseNodes.getLength(); k++) {
+                            Node node = courseNodes.item(k);
+                            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                                courseList.add((Element) node);
+                            }
+                        }
+
+                        // 2. Sort the list alphabetically by CourseNumber
+                        courseList.sort(Comparator.comparing(c -> getTextValue(c, "CourseNumber").toUpperCase()));
+
+                        // 3. Print the formatted table
+                        System.out.println("\n--- Updated Course List for Year " + yearLevel + ", " + termName + " ---");
+                        System.out.printf("%-15s | %-65s | %-5s | %-20s | %-15s%n",
+                                "Course Number", "Descriptive Title", "Units", "Prerequisites", "Grade");
+                        System.out.println("-".repeat(130));
+
+                        for (Element course : courseList) {
+                            String cNumber = getTextValue(course, "CourseNumber");
+                            String title = getTextValue(course, "DescriptiveTitle");
+                            String units = getTextValue(course, "Units");
+                            String prereq = getTextValue(course, "Prerequisites");
+                            String grade = getTextValue(course, "Grade");
+
+                            // Truncate long strings to keep the table clean
+                            if (title.length() > 65) title = title.substring(0, 62) + "...";
+                            if (prereq.length() > 20) prereq = prereq.substring(0, 17) + "...";
+
+                            System.out.printf("%-15s | %-65s | %-5s | %-20s | %-15s%n",
+                                    cNumber, title, units, prereq, grade);
+                        }
+                        System.out.println("-".repeat(130));
+                        return; // Exit once we found and printed the term
+                    }
+                }
+            }
+        }
+        System.out.println("Could not find entries for Year: " + yearLevel + " and Term: " + termName);
     }
 }
