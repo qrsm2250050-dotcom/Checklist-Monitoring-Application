@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Data>
+    <Year level="1">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CS 111 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Introduction to Computing [cite: 40]</DescriptiveTitle>
+                <Units>2 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 111L [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Introduction to Computing (Lab) [cite: 40]</DescriptiveTitle>
+                <Units>1 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 112 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Computer Programming 1 [cite: 40]</DescriptiveTitle>
+                <Units>2 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 112L [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Computer Programming 1 (Lab) [cite: 40]</DescriptiveTitle>
+                <Units>1 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 113 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Discrete Structures [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GMATH [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Mathematics in the Modern World [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GART [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Art Appreciation [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GHIST [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Readings in Philippine History [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT HW [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Physical Activity Towards Health and Fitness (Health and Wellness) [cite: 40]</DescriptiveTitle>
+                <Units>2 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 101 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>God's Journey with His People [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CS 121 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Digital Logic Design [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites>CS 111 [cite: 40]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 122 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Computer Programming 2 [cite: 40]</DescriptiveTitle>
+                <Units>2 [cite: 40]</Units>
+                <Prerequisites>CS 112 [cite: 40]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 1221 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Computer Programming 2 (Lab) [cite: 40]</DescriptiveTitle>
+                <Units>1 [cite: 40]</Units>
+                <Prerequisites>CS 112 [cite: 40]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 123 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Architecture and Organization [cite: 40]</DescriptiveTitle>
+                <Units>2 [cite: 40]</Units>
+                <Prerequisites>CS 112 [cite: 40]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 123L [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Architecture and Organization (Lab) [cite: 40]</DescriptiveTitle>
+                <Units>t [cite: 40]</Units>
+                <Prerequisites>CS 112 [cite: 40]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GSELF [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Understanding the Self [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GPCOM [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Purposive Communication [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GENVI [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Environmental Science [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT CS [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Physical Activity Towards Health and Fitness (Combative Sports) [cite: 40]</DescriptiveTitle>
+                <Units>2 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 102 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Christian Morality in Our Times [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+            <Course>
+                <CourseNumber>CS 131 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Software Modeling and Analysis [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites>CS 111 [cite: 40]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 132 [cite: 40]</CourseNumber>
+                <DescriptiveTitle>Mathematics for Computer Sciernice [cite: 40]</DescriptiveTitle>
+                <Units>3 [cite: 40]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+    </Year>
+    <Year level="2">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CS 211 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Cata Structures [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites>CS 112. C5 113 CS 212 (co-requisite [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 211L [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Data Structures (Lab [cite: 41]</DescriptiveTitle>
+                <Units>1 [cite: 41]</Units>
+                <Prerequisites>CS 112, GS 113 CS 212 (00- ) [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>212 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Operating Systems [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites>05 125 CS 2110- [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 212L [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Operating Systems (Lati [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>CS 123 CS 211L ( -requisit [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 213 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Human Computer Interaction [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>CS 122 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GSTS [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Science. Technology, and Society [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GRIVA [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Reading Visual Art [cite: 41]</DescriptiveTitle>
+                <Units>3 [cite: 41]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>NSTP-CWTS 1 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Foundations of Service [cite: 41]</DescriptiveTitle>
+                <Units>3 [cite: 41]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT OA [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Physical Activity Towards Haath and Fitness Outdoor and Adventure [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 103 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Catholic Fountation of Mission [cite: 41]</DescriptiveTitle>
+                <Units>3 [cite: 41]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CS221 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>formation Management [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites>08211 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 2211 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>mabion Management (Lab [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>CS211 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 222 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Computer Programming 2 [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites>CS122 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 2221 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Computer Programining 3 (Lab [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>05122 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 223 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Autumurta and Formal Language [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>08130 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GETHICS [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Ethics [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GCWORLD [cite: 41]</CourseNumber>
+                <DescriptiveTitle>The Contemporary World [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>NSTP-CWTS 2 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Social Awareness and Empowermem for Service [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>NSTP CWTS1 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT AQ [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Physical Activity Towards Howith and Fitness (Aquatics) [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CPE 104 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>CICM Missionary devily [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>CPE 103 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+            <Course>
+                <CourseNumber>CS 231 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Computer Networks [cite: 41]</DescriptiveTitle>
+                <Units>2 [cite: 41]</Units>
+                <Prerequisites>C8212 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS231 [cite: 41]</CourseNumber>
+                <DescriptiveTitle>Computer Netwodka ab [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GRIZAL [cite: 41]</CourseNumber>
+                <DescriptiveTitle>The Life and Works of Rizal [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GENTREF [cite: 41]</CourseNumber>
+                <DescriptiveTitle>The Entrepreneurial Mind [cite: 41]</DescriptiveTitle>
+                <Units></Units>
+                <Prerequisites>05-212 [cite: 41]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+    </Year>
+    <Year level="3">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CS 311 [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Applications Development [cite: 42]</DescriptiveTitle>
+                <Units>2 [cite: 42]</Units>
+                <Prerequisites>CS 122 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 311L [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Applications Development (Lab) [cite: 42]</DescriptiveTitle>
+                <Units>1 [cite: 42]</Units>
+                <Prerequisites>CS 122 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 312 [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Web Systems Development [cite: 42]</DescriptiveTitle>
+                <Units>2 [cite: 42]</Units>
+                <Prerequisites>CS 211 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 312L [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Web Systems Development (Lab) [cite: 42]</DescriptiveTitle>
+                <Units>1 [cite: 42]</Units>
+                <Prerequisites>CS 211 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 313 [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Software Engineering [cite: 42]</DescriptiveTitle>
+                <Units>3 [cite: 42]</Units>
+                <Prerequisites>CS 131, CS 221 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 314 [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Social and Personal Development in the ICT Workplace [cite: 42]</DescriptiveTitle>
+                <Units>3 [cite: 42]</Units>
+                <Prerequisites>CS 111GSELF, [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 315 [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Technology-Assisted Presentation and Presentation [cite: 42]</DescriptiveTitle>
+                <Units>3 [cite: 42]</Units>
+                <Prerequisites>CS 111, GPCOM [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSM 316 [cite: 42]</CourseNumber>
+                <DescriptiveTitle>Numerical Methods for Computer Science [cite: 42]</DescriptiveTitle>
+                <Units>3 [cite: 42]</Units>
+                <Prerequisites>CS 132 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 105A [cite: 42]</CourseNumber>
+                <DescriptiveTitle>CICM in Action: Justice, Peace, and Integrity of Creation, Indigenous Peoples, and Interreligious Dialogue [cite: 42]</DescriptiveTitle>
+                <Units>1.5 [cite: 42]</Units>
+                <Prerequisites>CFE 103, CFE 104 [cite: 42]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CS 321 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Artificial Intelligence [cite: 57]</DescriptiveTitle>
+                <Units>3 [cite: 57]</Units>
+                <Prerequisites>CS 132, CS 211 [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 322 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Data Science [cite: 57]</DescriptiveTitle>
+                <Units>2 [cite: 57]</Units>
+                <Prerequisites>CS 221 [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 3221 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Data Science Lab) [cite: 57]</DescriptiveTitle>
+                <Units>1 [cite: 57]</Units>
+                <Prerequisites>CS 221 [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 323 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Modeling and Simulation [cite: 57]</DescriptiveTitle>
+                <Units>2 [cite: 57]</Units>
+                <Prerequisites>CS 132, CS 211 [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 3231 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Modeling and Simulation (Lati) [cite: 57]</DescriptiveTitle>
+                <Units>1 [cite: 57]</Units>
+                <Prerequisites>CS 132. CS-211 [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 324 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Methods of Research in Computer Science [cite: 57]</DescriptiveTitle>
+                <Units>3 [cite: 57]</Units>
+                <Prerequisites>3rd year standing [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 325 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>Structure of Programming Languages. [cite: 57]</DescriptiveTitle>
+                <Units>3 [cite: 57]</Units>
+                <Prerequisites>CS211 [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 1058 [cite: 57]</CourseNumber>
+                <DescriptiveTitle>CICM in Action Environmental Planning and Management and Disaster Risk Reduction Management [cite: 57]</DescriptiveTitle>
+                <Units>1.5 [cite: 57]</Units>
+                <Prerequisites>CFE 105A [cite: 57]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+            <Course>
+                <CourseNumber>CS 331 [cite: 53]</CourseNumber>
+                <DescriptiveTitle>Practicum [cite: 54]</DescriptiveTitle>
+                <Units>6 [cite: 55]</Units>
+                <Prerequisites>4th year standing [cite: 56]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+    </Year>
+    <Year level="4">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CFE 105A [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Embracing the CICM Mission [cite: 43]</DescriptiveTitle>
+                <Units>1.5 [cite: 43]</Units>
+                <Prerequisites>CFE 1058 [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 411 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>CS Thesis 1 [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>CS 324 [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 412 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Information Assurance and Security [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>core courtes [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS413 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Professional Practice and Cyberethics [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>GETHICS, CS 231 [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Elective T [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>3rd year standing [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Elective 2 [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>3rd year standing [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CFE 1060 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Embracing the CICM Mission [cite: 43]</DescriptiveTitle>
+                <Units>15 [cite: 43]</Units>
+                <Prerequisites>CFE 106A [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 421 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>CS Thesis 2 [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>CS Thesis t [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 422 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Distributed Computing [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>4th year standing [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FOR LANG 1 [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Foreign Language 1 [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites></Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Elective 3 [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>4th year standing [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE [cite: 43]</CourseNumber>
+                <DescriptiveTitle>Elective 4 [cite: 43]</DescriptiveTitle>
+                <Units>3 [cite: 43]</Units>
+                <Prerequisites>4th year standing [cite: 43]</Prerequisites>
+                <Grade></Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+        </Term>
+    </Year>
+</Data>
