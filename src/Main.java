@@ -132,7 +132,101 @@ public class Main {
                             }
                         }
                     } else if (subChoice4.equals("2")) {
-                        System.out.println(">>> Functionality not yet implemented.");
+
+                        // STEP 1: Choose term
+                        printTermMenu();
+                        System.out.print("\nSelect the term to remove the course from (1-12): ");
+                        String termChoice = kbd.nextLine();
+
+                        String targetYear = "";
+                        String targetTerm = "";
+
+                        switch (termChoice) {
+                            case "1" -> { targetYear = "1"; targetTerm = "1st Semester"; }
+                            case "2" -> { targetYear = "1"; targetTerm = "2nd Semester"; }
+                            case "3" -> { targetYear = "1"; targetTerm = "Short Term"; }
+                            case "4" -> { targetYear = "2"; targetTerm = "1st Semester"; }
+                            case "5" -> { targetYear = "2"; targetTerm = "2nd Semester"; }
+                            case "6" -> { targetYear = "2"; targetTerm = "Short Term"; }
+                            case "7" -> { targetYear = "3"; targetTerm = "1st Semester"; }
+                            case "8" -> { targetYear = "3"; targetTerm = "2nd Semester"; }
+                            case "9" -> { targetYear = "3"; targetTerm = "Short Term"; }
+                            case "10" -> { targetYear = "4"; targetTerm = "1st Semester"; }
+                            case "11" -> { targetYear = "4"; targetTerm = "2nd Semester"; }
+                            case "12" -> { targetYear = "4"; targetTerm = "Short Term"; }
+                            default -> System.out.println("Invalid selection.");
+                        }
+
+                        if (!targetYear.isEmpty()) {
+
+                            NodeList yearNodes = doc.getElementsByTagName("Year");
+                            List<Element> courseList = new ArrayList<>();
+                            Element targetTermElement = null;
+
+                            // STEP 2: Find selected term and collect courses
+                            for (int i = 0; i < yearNodes.getLength(); i++) {
+                                Element yearElement = (Element) yearNodes.item(i);
+
+                                if (yearElement.getAttribute("level").equals(targetYear)) {
+                                    NodeList termNodes = yearElement.getElementsByTagName("Term");
+
+                                    for (int j = 0; j < termNodes.getLength(); j++) {
+                                        Element termElement = (Element) termNodes.item(j);
+
+                                        if (termElement.getAttribute("name").equalsIgnoreCase(targetTerm)) {
+                                            targetTermElement = termElement;
+
+                                            NodeList courses = termElement.getElementsByTagName("Course");
+
+                                            for (int k = 0; k < courses.getLength(); k++) {
+                                                Node node = courses.item(k);
+                                                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                                                    courseList.add((Element) node);
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (courseList.isEmpty()) {
+                                System.out.println("No courses found.");
+                                return;
+                            }
+
+                            // STEP 3: Sort alphabetically
+                            courseList.sort(Comparator.comparing(
+                                    c -> getTextValue(c, "CourseNumber").toUpperCase()
+                            ));
+
+                            // STEP 4: Show numbered alphabetical list
+                            System.out.println("\n--- Select Course to Remove ---");
+                            for (int i = 0; i < courseList.size(); i++) {
+                                String cNum = getTextValue(courseList.get(i), "CourseNumber");
+                                String title = getTextValue(courseList.get(i), "DescriptiveTitle");
+                                System.out.println((i + 1) + ". " + cNum + " - " + title);
+                            }
+
+                            // STEP 5: User selects course
+                            System.out.print("Enter choice: ");
+                            int removeIndex = Integer.parseInt(kbd.nextLine()) - 1;
+
+                            if (removeIndex < 0 || removeIndex >= courseList.size()) {
+                                System.out.println("Invalid selection.");
+                                return;
+                            }
+
+                            Element selectedCourse = courseList.get(removeIndex);
+
+                            // STEP 6: Remove from XML
+                            targetTermElement.removeChild(selectedCourse);
+
+                            saveXMLDocument(doc, filePath);
+
+                            System.out.println(">>> Course successfully removed!");
+                            displayTermCoursesAlphabetically(doc, targetYear, targetTerm);
+                        }
                     } else {
                         System.out.println("Invalid choice. Please try again.");
                     }
