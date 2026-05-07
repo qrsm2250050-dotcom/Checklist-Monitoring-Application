@@ -1,12 +1,9 @@
-//========== add these for this function
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
 import java.util.Scanner;
 import java.io.File;
 
-// for xml input and output
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -20,30 +17,35 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Main {
+
     public static Scanner kbd = new Scanner(System.in);
     public static String filePath = "src/Data.xml";
 
     public static void main(String[] args) {
-        Document doc = null;
 
-        // xml initialization
+        Document doc;
+
         try {
             File xmlFile = new File(filePath);
+
             if (!xmlFile.exists()) {
                 System.out.println("Error: Could not find " + filePath);
                 return;
             }
+
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
             doc = dBuilder.parse(xmlFile);
             doc.getDocumentElement().normalize();
+
         } catch (Exception e) {
             e.printStackTrace();
             return;
         }
 
-        boolean running = true;
-        while (running) {
+        while (true) {
+
             System.out.println("\n===== MAIN MENU =====");
             System.out.println("4. Edit checklist");
             System.out.print("Select an option: ");
@@ -51,171 +53,190 @@ public class Main {
             String choice = kbd.nextLine();
 
             switch (choice) {
+
                 case "4" -> {
-                    System.out.println("\n--- Edit checklist ---");
+
+                    System.out.println("\n--- Edit Checklist ---");
                     System.out.println("1. Add course");
-                    System.out.println("2. Remove a course");
+                    System.out.println("2. Remove course");
                     System.out.print("Select an option: ");
-                    String subChoice4 = kbd.nextLine();
 
-                    if (subChoice4.equals("1")) {
+                    String subChoice = kbd.nextLine();
+
+                    if (subChoice.equals("1")) {
+
                         printTermMenu();
-                        System.out.print("\nSelect the term to add the course to (1-12): ");
+
+                        System.out.print("\nSelect term (1-12): ");
                         String termChoice = kbd.nextLine();
 
-                        String targetYear = "";
-                        String targetTerm = "";
+                        String[] termData = getYearAndTerm(termChoice);
 
-                        // Map the selection to the exact XML format
-                        switch (termChoice) {
-                            case "1" -> { targetYear = "1"; targetTerm = "1st Semester"; }
-                            case "2" -> { targetYear = "1"; targetTerm = "2nd Semester"; }
-                            case "3" -> { targetYear = "1"; targetTerm = "Short Term"; }
-                            case "4" -> { targetYear = "2"; targetTerm = "1st Semester"; }
-                            case "5" -> { targetYear = "2"; targetTerm = "2nd Semester"; }
-                            case "6" -> { targetYear = "2"; targetTerm = "Short Term"; }
-                            case "7" -> { targetYear = "3"; targetTerm = "1st Semester"; }
-                            case "8" -> { targetYear = "3"; targetTerm = "2nd Semester"; }
-                            case "9" -> { targetYear = "3"; targetTerm = "Short Term"; }
-                            case "10" -> { targetYear = "4"; targetTerm = "1st Semester"; }
-                            case "11" -> { targetYear = "4"; targetTerm = "2nd Semester"; }
-                            case "12" -> { targetYear = "4"; targetTerm = "Short Term"; }
-                            default -> System.out.println("Invalid selection.");
+                        if (termData == null) {
+                            System.out.println("Invalid selection.");
+                            continue;
                         }
 
-                        if (!targetYear.isEmpty()) {
-                            System.out.print("Enter Course Number: ");
-                            String cNum = kbd.nextLine();
-                            System.out.print("Enter Descriptive Title: ");
-                            String cTitle = kbd.nextLine();
-                            System.out.print("Enter Units: ");
-                            String cUnits = kbd.nextLine();
-                            System.out.print("Enter Prerequisites: ");
-                            String cPrereq = kbd.nextLine();
+                        String year = termData[0];
+                        String term = termData[1];
 
-                            boolean success = addCourse(doc, targetYear, targetTerm, cNum, cTitle, cUnits, cPrereq);
+                        System.out.print("Enter Course Number: ");
+                        String courseNum = kbd.nextLine();
 
-                            if (success) {
-                                saveXMLDocument(doc, filePath);
-                                System.out.println(">>> Course successfully added!");
+                        System.out.print("Enter Descriptive Title: ");
+                        String title = kbd.nextLine();
 
-                                // === CALL THE NEW METHOD WITH YEAR AND TERM ===
-                                displayTermCoursesAlphabetically(doc, targetYear, targetTerm);
+                        System.out.print("Enter Units: ");
+                        String units = kbd.nextLine();
 
-                            } else {
-                                System.out.println(">>> Error: Could not find the specified Year and Term in the XML.");
-                            }
-                        }
-                    } else if (subChoice4.equals("2")) {
+                        System.out.print("Enter Prerequisites: ");
+                        String prereq = kbd.nextLine();
 
-                        // STEP 1: Choose term
-                        printTermMenu();
-                        System.out.print("\nSelect the term to remove the course from (1-12): ");
-                        String termChoice = kbd.nextLine();
+                        boolean added = addCourse(
+                                doc,
+                                year,
+                                term,
+                                courseNum,
+                                title,
+                                units,
+                                prereq
+                        );
 
-                        String targetYear = "";
-                        String targetTerm = "";
-
-                        switch (termChoice) {
-                            case "1" -> { targetYear = "1"; targetTerm = "1st Semester"; }
-                            case "2" -> { targetYear = "1"; targetTerm = "2nd Semester"; }
-                            case "3" -> { targetYear = "1"; targetTerm = "Short Term"; }
-                            case "4" -> { targetYear = "2"; targetTerm = "1st Semester"; }
-                            case "5" -> { targetYear = "2"; targetTerm = "2nd Semester"; }
-                            case "6" -> { targetYear = "2"; targetTerm = "Short Term"; }
-                            case "7" -> { targetYear = "3"; targetTerm = "1st Semester"; }
-                            case "8" -> { targetYear = "3"; targetTerm = "2nd Semester"; }
-                            case "9" -> { targetYear = "3"; targetTerm = "Short Term"; }
-                            case "10" -> { targetYear = "4"; targetTerm = "1st Semester"; }
-                            case "11" -> { targetYear = "4"; targetTerm = "2nd Semester"; }
-                            case "12" -> { targetYear = "4"; targetTerm = "Short Term"; }
-                            default -> System.out.println("Invalid selection.");
-                        }
-
-                        if (!targetYear.isEmpty()) {
-
-                            NodeList yearNodes = doc.getElementsByTagName("Year");
-                            List<Element> courseList = new ArrayList<>();
-                            Element targetTermElement = null;
-
-                            // STEP 2: Find selected term and collect courses
-                            for (int i = 0; i < yearNodes.getLength(); i++) {
-                                Element yearElement = (Element) yearNodes.item(i);
-
-                                if (yearElement.getAttribute("level").equals(targetYear)) {
-                                    NodeList termNodes = yearElement.getElementsByTagName("Term");
-
-                                    for (int j = 0; j < termNodes.getLength(); j++) {
-                                        Element termElement = (Element) termNodes.item(j);
-
-                                        if (termElement.getAttribute("name").equalsIgnoreCase(targetTerm)) {
-                                            targetTermElement = termElement;
-
-                                            NodeList courses = termElement.getElementsByTagName("Course");
-
-                                            for (int k = 0; k < courses.getLength(); k++) {
-                                                Node node = courses.item(k);
-                                                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                                                    courseList.add((Element) node);
-                                                }
-                                            }
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-
-                            if (courseList.isEmpty()) {
-                                System.out.println("No courses found.");
-                                return;
-                            }
-
-                            // STEP 3: Sort alphabetically
-                            courseList.sort(Comparator.comparing(
-                                    c -> getTextValue(c, "CourseNumber").toUpperCase()
-                            ));
-
-                            // STEP 4: Show numbered alphabetical list
-                            System.out.println("\n--- Select Course to Remove ---");
-                            for (int i = 0; i < courseList.size(); i++) {
-                                String cNum = getTextValue(courseList.get(i), "CourseNumber");
-                                String title = getTextValue(courseList.get(i), "DescriptiveTitle");
-                                System.out.println((i + 1) + ". " + cNum + " - " + title);
-                            }
-
-                            // STEP 5: User selects course
-                            System.out.print("Enter choice: ");
-                            int removeIndex = Integer.parseInt(kbd.nextLine()) - 1;
-
-                            if (removeIndex < 0 || removeIndex >= courseList.size()) {
-                                System.out.println("Invalid selection.");
-                                return;
-                            }
-
-                            Element selectedCourse = courseList.get(removeIndex);
-
-                            // STEP 6: Remove from XML
-                            targetTermElement.removeChild(selectedCourse);
+                        if (added) {
 
                             saveXMLDocument(doc, filePath);
 
-                            System.out.println(">>> Course successfully removed!");
-                            displayTermCoursesAlphabetically(doc, targetYear, targetTerm);
+                            System.out.println(">>> Course successfully added!");
+
+                            displayTermCoursesAlphabetically(doc, year, term);
+
+                        } else {
+                            System.out.println(">>> Failed to add course.");
                         }
+
+                    } else if (subChoice.equals("2")) {
+
+                        printTermMenu();
+
+                        System.out.print("\nSelect term (1-12): ");
+                        String termChoice = kbd.nextLine();
+
+                        String[] termData = getYearAndTerm(termChoice);
+
+                        if (termData == null) {
+                            System.out.println("Invalid selection.");
+                            continue;
+                        }
+
+                        String year = termData[0];
+                        String term = termData[1];
+
+                        NodeList yearNodes = doc.getElementsByTagName("Year");
+
+                        List<Element> courseList = new ArrayList<>();
+                        Element targetTermElement = null;
+
+                        for (int i = 0; i < yearNodes.getLength(); i++) {
+
+                            Element yearElement = (Element) yearNodes.item(i);
+
+                            if (yearElement.getAttribute("level").equals(year)) {
+
+                                NodeList termNodes = yearElement.getElementsByTagName("Term");
+
+                                for (int j = 0; j < termNodes.getLength(); j++) {
+
+                                    Element termElement = (Element) termNodes.item(j);
+
+                                    if (termElement.getAttribute("name").equalsIgnoreCase(term)) {
+
+                                        targetTermElement = termElement;
+
+                                        NodeList courses = termElement.getElementsByTagName("Course");
+
+                                        for (int k = 0; k < courses.getLength(); k++) {
+
+                                            Node node = courses.item(k);
+
+                                            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                                                courseList.add((Element) node);
+                                            }
+                                        }
+
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (courseList.isEmpty()) {
+                            System.out.println("No courses found.");
+                            continue;
+                        }
+
+                        courseList.sort(
+                                Comparator.comparing(
+                                        c -> getTextValue(c, "CourseNumber").toUpperCase()
+                                )
+                        );
+
+                        System.out.println("\n--- Select Course to Remove ---");
+
+                        for (int i = 0; i < courseList.size(); i++) {
+
+                            String courseNum = getTextValue(
+                                    courseList.get(i),
+                                    "CourseNumber"
+                            );
+
+                            String title = getTextValue(
+                                    courseList.get(i),
+                                    "DescriptiveTitle"
+                            );
+
+                            System.out.println(
+                                    (i + 1) + ". " + courseNum + " - " + title
+                            );
+                        }
+
+                        System.out.print("Enter choice: ");
+
+                        int removeIndex;
+
+                        try {
+                            removeIndex = Integer.parseInt(kbd.nextLine()) - 1;
+                        } catch (Exception e) {
+                            System.out.println("Invalid input.");
+                            continue;
+                        }
+
+                        if (removeIndex < 0 || removeIndex >= courseList.size()) {
+                            System.out.println("Invalid selection.");
+                            continue;
+                        }
+
+                        Element selectedCourse = courseList.get(removeIndex);
+
+                        targetTermElement.removeChild(selectedCourse);
+
+                        saveXMLDocument(doc, filePath);
+
+                        System.out.println(">>> Course successfully removed!");
+
+                        displayTermCoursesAlphabetically(doc, year, term);
+
                     } else {
-                        System.out.println("Invalid choice. Please try again.");
+                        System.out.println("Invalid choice.");
                     }
                 }
-                default -> System.out.println("Invalid choice. Please try again.");
+
+                default -> System.out.println("Invalid choice.");
             }
         }
     }
 
-    // ==========================================================
-    // Menu Helper Methods
-    // ==========================================================
+    public static void printTermMenu() {
 
-    private static void printTermMenu() {
         System.out.println("\n--- Select Term ---");
         System.out.println("1. First Year, First Semester");
         System.out.println("2. First Year, Second Semester");
@@ -231,175 +252,156 @@ public class Main {
         System.out.println("12. Fourth Year, Short Term");
     }
 
-    // ==========================================================
-    // XML Methods
-    // ==========================================================
+    public static String[] getYearAndTerm(String choice) {
 
-    /**
-     * Searches the XML document for a specific Year and Term, then prints all courses
-     * in a neatly formatted console table.
-     */
-    public static void displayCoursesTable(Document doc, String yearLevel, String termName) {
-        NodeList yearNodes = doc.getElementsByTagName("Year");
-        boolean termFound = false;
+        return switch (choice) {
 
-        for (int i = 0; i < yearNodes.getLength(); i++) {
-            Element yearElement = (Element) yearNodes.item(i);
+            case "1" -> new String[]{"1", "1st Semester"};
+            case "2" -> new String[]{"1", "2nd Semester"};
+            case "3" -> new String[]{"1", "Short Term"};
 
-            if (yearElement.getAttribute("level").equals(yearLevel)) {
-                NodeList termNodes = yearElement.getElementsByTagName("Term");
+            case "4" -> new String[]{"2", "1st Semester"};
+            case "5" -> new String[]{"2", "2nd Semester"};
+            case "6" -> new String[]{"2", "Short Term"};
 
-                for (int j = 0; j < termNodes.getLength(); j++) {
-                    Element termElement = (Element) termNodes.item(j);
+            case "7" -> new String[]{"3", "1st Semester"};
+            case "8" -> new String[]{"3", "2nd Semester"};
+            case "9" -> new String[]{"3", "Short Term"};
 
-                    if (termElement.getAttribute("name").equalsIgnoreCase(termName)) {
-                        termFound = true;
-                        System.out.println("\n--- Courses for Year " + yearLevel + ", " + termElement.getAttribute("name") + " ---");
+            case "10" -> new String[]{"4", "1st Semester"};
+            case "11" -> new String[]{"4", "2nd Semester"};
+            case "12" -> new String[]{"4", "Short Term"};
 
-                        // Print Table Header
-                        System.out.printf("%-15s | %-65s | %-5s | %-20s | %-5s%n",
-                                "Course Number", "Descriptive Title", "Units", "Prerequisites", "Grade");
-                        System.out.println("-".repeat(125)); // Java 11+ feature
-
-                        // Extract and print course details
-                        NodeList courseNodes = termElement.getElementsByTagName("Course");
-                        for (int k = 0; k < courseNodes.getLength(); k++) {
-                            Element course = (Element) courseNodes.item(k);
-
-                            String cNumber = getTextValue(course, "CourseNumber");
-                            String title = getTextValue(course, "DescriptiveTitle");
-                            String units = getTextValue(course, "Units");
-                            String prereq = getTextValue(course, "Prerequisites");
-                            String grade = getTextValue(course, "Grade");
-
-                            // Truncate long titles/prerequisites slightly to keep the table clean if necessary
-                            if (title.length() > 65) title = title.substring(0, 62) + "...";
-                            if (prereq.length() > 20) prereq = prereq.substring(0, 17) + "...";
-
-                            System.out.printf("%-15s | %-65s | %-5s | %-20s | %-5s%n",
-                                    cNumber, title, units, prereq, grade);
-                        }
-                        System.out.println("-".repeat(125));
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (!termFound) {
-            System.out.println("Could not find entries for Year: " + yearLevel + " and Term: " + termName);
-        }
+            default -> null;
+        };
     }
 
-    /**
-     * Updates the <Grade> tag of a specific course using its Course Number.
-     */
-    public static boolean updateCourseGrade(Document doc, String targetCourse, String newGrade) {
-        NodeList courseList = doc.getElementsByTagName("Course");
-        boolean updated = false;
-
-        for (int i = 0; i < courseList.getLength(); i++) {
-            Node courseNode = courseList.item(i);
-
-            if (courseNode.getNodeType() == Node.ELEMENT_NODE) {
-                Element courseElement = (Element) courseNode;
-                String courseNumber = getTextValue(courseElement, "CourseNumber");
-
-                if (courseNumber.equalsIgnoreCase(targetCourse)) {
-                    Node gradeNode = courseElement.getElementsByTagName("Grade").item(0);
-                    gradeNode.setTextContent(newGrade);
-                    System.out.println(">>> Successfully updated grade for " + targetCourse + " to " + newGrade);
-                    updated = true;
-                    break;
-
-                }
-            }
-        }
-
-        if (!updated) {
-            System.out.println(">>> Course " + targetCourse + " not found. Grade not updated.");
-        }
-
-        return updated;
-    }
-
-    /**
-     * Saves the modified Document back to the XML file.
-     */
     public static void saveXMLDocument(Document doc, String filePath) {
-        try {
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
 
-            transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes");
+        try {
+
+            TransformerFactory transformerFactory =
+                    TransformerFactory.newInstance();
+
+            Transformer transformer =
+                    transformerFactory.newTransformer();
+
+            transformer.setOutputProperty(
+                    javax.xml.transform.OutputKeys.INDENT,
+                    "yes"
+            );
 
             DOMSource source = new DOMSource(doc);
+
             StreamResult result = new StreamResult(new File(filePath));
 
             transformer.transform(source, result);
-            System.out.println(">>> Changes successfully saved to " + filePath);
+
+            System.out.println(
+                    ">>> Changes successfully saved to " + filePath
+            );
+
         } catch (Exception e) {
-            System.err.println("Error saving the XML file: " + e.getMessage());
+
+            System.out.println(
+                    "Error saving XML file: " + e.getMessage()
+            );
         }
     }
 
-    // Helper method to safely extract text content from an XML element
-    private static String getTextValue(Element parentElement, String tagName) {
+    public static String getTextValue(
+            Element parentElement,
+            String tagName
+    ) {
+
         NodeList list = parentElement.getElementsByTagName(tagName);
+
         if (list != null && list.getLength() > 0) {
             return list.item(0).getTextContent().trim();
         }
+
         return "";
     }
 
-    // THIS IS NECESSARY===============================================
-    /**
-     * Creates a new Course element and appends it to the specified Year and Term in the XML document.
-     */
-    public static boolean addCourse(Document doc, String yearLevel, String termName,
-                                    String courseNum, String title, String units, String prereq) {
+    public static boolean addCourse(
+            Document doc,
+            String yearLevel,
+            String termName,
+            String courseNum,
+            String title,
+            String units,
+            String prereq
+    ) {
+
         NodeList yearNodes = doc.getElementsByTagName("Year");
 
         for (int i = 0; i < yearNodes.getLength(); i++) {
+
             Element yearElement = (Element) yearNodes.item(i);
 
             if (yearElement.getAttribute("level").equals(yearLevel)) {
-                NodeList termNodes = yearElement.getElementsByTagName("Term");
+
+                NodeList termNodes =
+                        yearElement.getElementsByTagName("Term");
 
                 for (int j = 0; j < termNodes.getLength(); j++) {
-                    Element termElement = (Element) termNodes.item(j);
 
-                    if (termElement.getAttribute("name").equalsIgnoreCase(termName)) {
+                    Element termElement =
+                            (Element) termNodes.item(j);
 
-                        // Create the new <Course> node
-                        Element newCourse = doc.createElement("Course");
+                    if (
+                            termElement.getAttribute("name")
+                                    .equalsIgnoreCase(termName)
+                    ) {
 
-                        // Add <CourseNumber>
-                        Element cNum = doc.createElement("CourseNumber");
-                        cNum.appendChild(doc.createTextNode(courseNum));
+                        Element newCourse =
+                                doc.createElement("Course");
+
+                        Element cNum =
+                                doc.createElement("CourseNumber");
+
+                        cNum.appendChild(
+                                doc.createTextNode(courseNum)
+                        );
+
                         newCourse.appendChild(cNum);
 
-                        // Add <DescriptiveTitle>
-                        Element cTitle = doc.createElement("DescriptiveTitle");
-                        cTitle.appendChild(doc.createTextNode(title));
+                        Element cTitle =
+                                doc.createElement("DescriptiveTitle");
+
+                        cTitle.appendChild(
+                                doc.createTextNode(title)
+                        );
+
                         newCourse.appendChild(cTitle);
 
-                        // Add <Units>
-                        Element cUnits = doc.createElement("Units");
-                        cUnits.appendChild(doc.createTextNode(units));
+                        Element cUnits =
+                                doc.createElement("Units");
+
+                        cUnits.appendChild(
+                                doc.createTextNode(units)
+                        );
+
                         newCourse.appendChild(cUnits);
 
-                        // Add <Prerequisites>
-                        Element cPrereq = doc.createElement("Prerequisites");
-                        cPrereq.appendChild(doc.createTextNode(prereq));
+                        Element cPrereq =
+                                doc.createElement("Prerequisites");
+
+                        cPrereq.appendChild(
+                                doc.createTextNode(prereq)
+                        );
+
                         newCourse.appendChild(cPrereq);
 
-                        // Add <Grade> with default text
-                        Element cGrade = doc.createElement("Grade");
-                        cGrade.appendChild(doc.createTextNode("NO GRADES YET"));
+                        Element cGrade =
+                                doc.createElement("Grade");
+
+                        cGrade.appendChild(
+                                doc.createTextNode("NO GRADES YET")
+                        );
+
                         newCourse.appendChild(cGrade);
 
-                        // Append the newly formed course to the Term element
                         termElement.appendChild(newCourse);
 
                         return true;
@@ -407,108 +409,124 @@ public class Main {
                 }
             }
         }
+
         return false;
     }
 
-    /**
-     * Extracts all courses from the XML document, sorts them alphabetically by Course Number,
-     * and displays them in a formatted table.
-     */
-    public static void displayAllCoursesAlphabetically(Document doc) {
-        NodeList courseNodes = doc.getElementsByTagName("Course");
-        List<Element> courseList = new ArrayList<>();
+    public static void displayTermCoursesAlphabetically(
+            Document doc,
+            String yearLevel,
+            String termName
+    ) {
 
-        // 1. Extract all <Course> elements into a Java List
-        for (int i = 0; i < courseNodes.getLength(); i++) {
-            Node node = courseNodes.item(i);
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                courseList.add((Element) node);
-            }
-        }
-
-        // 2. Sort the list alphabetically by the <CourseNumber> text content
-        courseList.sort(Comparator.comparing(c -> getTextValue(c, "CourseNumber").toUpperCase()));
-
-        // 3. Print the formatted table
-        System.out.println("\n--- Full Course List (Alphabetical by Course Number) ---");
-        System.out.printf("%-15s | %-65s | %-5s | %-20s | %-15s%n",
-                "Course Number", "Descriptive Title", "Units", "Prerequisites", "Grade");
-        System.out.println("-".repeat(130));
-
-        for (Element course : courseList) {
-            String cNumber = getTextValue(course, "CourseNumber");
-            String title = getTextValue(course, "DescriptiveTitle");
-            String units = getTextValue(course, "Units");
-            String prereq = getTextValue(course, "Prerequisites");
-            String grade = getTextValue(course, "Grade");
-
-            // Truncate long strings to keep the table clean
-            if (title.length() > 65) title = title.substring(0, 62) + "...";
-            if (prereq.length() > 20) prereq = prereq.substring(0, 17) + "...";
-
-            System.out.printf("%-15s | %-65s | %-5s | %-20s | %-15s%n",
-                    cNumber, title, units, prereq, grade);
-        }
-        System.out.println("-".repeat(130));
-    }
-    /**
-     * Extracts courses for a specific Year and Term, sorts them alphabetically by
-     * Course Number, and displays them in a formatted table.
-     */
-    public static void displayTermCoursesAlphabetically(Document doc, String yearLevel, String termName) {
         NodeList yearNodes = doc.getElementsByTagName("Year");
 
         for (int i = 0; i < yearNodes.getLength(); i++) {
+
             Element yearElement = (Element) yearNodes.item(i);
 
             if (yearElement.getAttribute("level").equals(yearLevel)) {
-                NodeList termNodes = yearElement.getElementsByTagName("Term");
+
+                NodeList termNodes =
+                        yearElement.getElementsByTagName("Term");
 
                 for (int j = 0; j < termNodes.getLength(); j++) {
-                    Element termElement = (Element) termNodes.item(j);
 
-                    if (termElement.getAttribute("name").equalsIgnoreCase(termName)) {
+                    Element termElement =
+                            (Element) termNodes.item(j);
 
-                        // 1. Extract courses ONLY for this specific term
-                        NodeList courseNodes = termElement.getElementsByTagName("Course");
-                        List<Element> courseList = new ArrayList<>();
+                    if (
+                            termElement.getAttribute("name")
+                                    .equalsIgnoreCase(termName)
+                    ) {
+
+                        NodeList courseNodes =
+                                termElement.getElementsByTagName("Course");
+
+                        List<Element> courseList =
+                                new ArrayList<>();
 
                         for (int k = 0; k < courseNodes.getLength(); k++) {
+
                             Node node = courseNodes.item(k);
+
                             if (node.getNodeType() == Node.ELEMENT_NODE) {
                                 courseList.add((Element) node);
                             }
                         }
 
-                        // 2. Sort the list alphabetically by CourseNumber
-                        courseList.sort(Comparator.comparing(c -> getTextValue(c, "CourseNumber").toUpperCase()));
+                        courseList.sort(
+                                Comparator.comparing(
+                                        c -> getTextValue(
+                                                c,
+                                                "CourseNumber"
+                                        ).toUpperCase()
+                                )
+                        );
 
-                        // 3. Print the formatted table
-                        System.out.println("\n--- Updated Course List for Year " + yearLevel + ", " + termName + " ---");
-                        System.out.printf("%-15s | %-65s | %-5s | %-20s | %-15s%n",
-                                "Course Number", "Descriptive Title", "Units", "Prerequisites", "Grade");
+                        System.out.println(
+                                "\n--- Updated Course List ---"
+                        );
+
+                        System.out.printf(
+                                "%-15s | %-65s | %-5s | %-20s | %-15s%n",
+                                "Course Number",
+                                "Descriptive Title",
+                                "Units",
+                                "Prerequisites",
+                                "Grade"
+                        );
+
                         System.out.println("-".repeat(130));
 
                         for (Element course : courseList) {
-                            String cNumber = getTextValue(course, "CourseNumber");
-                            String title = getTextValue(course, "DescriptiveTitle");
-                            String units = getTextValue(course, "Units");
-                            String prereq = getTextValue(course, "Prerequisites");
-                            String grade = getTextValue(course, "Grade");
 
-                            // Truncate long strings to keep the table clean
-                            if (title.length() > 65) title = title.substring(0, 62) + "...";
-                            if (prereq.length() > 20) prereq = prereq.substring(0, 17) + "...";
+                            String cNumber =
+                                    getTextValue(course, "CourseNumber");
 
-                            System.out.printf("%-15s | %-65s | %-5s | %-20s | %-15s%n",
-                                    cNumber, title, units, prereq, grade);
+                            String title =
+                                    getTextValue(course, "DescriptiveTitle");
+
+                            String units =
+                                    getTextValue(course, "Units");
+
+                            String prereq =
+                                    getTextValue(course, "Prerequisites");
+
+                            String grade =
+                                    getTextValue(course, "Grade");
+
+                            if (title.length() > 65) {
+                                title = title.substring(0, 62) + "...";
+                            }
+
+                            if (prereq.length() > 20) {
+                                prereq = prereq.substring(0, 17) + "...";
+                            }
+
+                            System.out.printf(
+                                    "%-15s | %-65s | %-5s | %-20s | %-15s%n",
+                                    cNumber,
+                                    title,
+                                    units,
+                                    prereq,
+                                    grade
+                            );
                         }
+
                         System.out.println("-".repeat(130));
-                        return; // Exit once we found and printed the term
+
+                        return;
                     }
                 }
             }
         }
-        System.out.println("Could not find entries for Year: " + yearLevel + " and Term: " + termName);
+
+        System.out.println(
+                "Could not find entries for Year "
+                        + yearLevel
+                        + " and Term "
+                        + termName
+        );
     }
 }
