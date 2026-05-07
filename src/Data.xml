@@ -1,2785 +1,3954 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Data>
-                    
+                            
+    
+    
     
     
     
     <Year level="1">
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="1st Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 111</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Introduction to Computing</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 111L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Introduction to Computing (Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 112</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Programming 1</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 112L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Programming 1 (Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 113</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Discrete Structures</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GMATH</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Mathematics in the Modern World</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GART</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Art Appreciation</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GHIST</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Readings in Philippine History</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>FIT HW</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Physical Activity Towards Health and Fitness (Health and Wellness)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 101</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>God's Journey with His People</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="2nd Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 121</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Digital Logic Design</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 111</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 122</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Programming 2</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 112</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 1221</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Programming 2 (Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 112</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 123</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Architecture and Organization</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 112</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 123L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Architecture and Organization (Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>t</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 112</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GSELF</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Understanding the Self</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GPCOM</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Purposive Communication</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GENVI</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Environmental Science</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>FIT CS</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Physical Activity Towards Health and Fitness (Combative Sports)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 102</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Christian Morality in Our Times</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="Short Term">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 131</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Software Modeling and Analysis</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 111</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 132</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Mathematics for Computer Sciernice</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                    
+                                                    
+    
+    
     
     
     
     </Year>
-                    
+                            
+    
+    
     
     
     
     <Year level="2">
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="1st Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 211</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Cata Structures</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 112. C5 113 CS 212 (co-requisite</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 211L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Data Structures (Lab</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 112, GS 113 CS 212 (00- )</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>212</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Operating Systems</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>05 125 CS 2110-</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 212L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Operating Systems (Lati</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 123 CS 211L ( -requisit</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 213</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Human Computer Interaction</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 122</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GSTS</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Science. Technology, and Society</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GRIVA</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Reading Visual Art</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>NSTP-CWTS 1</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Foundations of Service</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>FIT OA</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Physical Activity Towards Haath and Fitness Outdoor and Adventure</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 103</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Catholic Fountation of Mission</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="2nd Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS221</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>formation Management</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>08211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 2211</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>mabion Management (Lab</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 222</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Programming 2</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS122</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 2221</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Programining 3 (Lab</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>05122</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 223</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Autumurta and Formal Language</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>08130</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GETHICS</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Ethics</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GCWORLD</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>The Contemporary World</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>NSTP-CWTS 2</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Social Awareness and Empowermem for Service</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>NSTP CWTS1</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>FIT AQ</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Physical Activity Towards Howith and Fitness (Aquatics)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CPE 104</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>CICM Missionary devily</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CPE 103</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="Short Term">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 231</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Networks</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>C8212</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS231</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Computer Netwodka ab</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GRIZAL</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>The Life and Works of Rizal</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>GENTREF</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>The Entrepreneurial Mind</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units/>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>05-212</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                    
+                                                    
+    
+    
     
     
     
     </Year>
-                    
+                            
+    
+    
     
     
     
     <Year level="3">
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="1st Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 311</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Applications Development</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 122</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 311L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Applications Development (Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 122</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 312</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Web Systems Development</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 312L</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Web Systems Development (Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 313</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Software Engineering</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 131, CS 221</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 314</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Social and Personal Development in the ICT Workplace</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 111GSELF,</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 315</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Technology-Assisted Presentation and Presentation</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 111, GPCOM</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CSM 316</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Numerical Methods for Computer Science</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 132</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 105A</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>CICM in Action: Justice, Peace, and Integrity of Creation, Indigenous Peoples, and Interreligious Dialogue</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1.5</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CFE 103, CFE 104</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="2nd Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 321</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Artificial Intelligence</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 132, CS 211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 322</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Data Science</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 221</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 3221</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Data Science Lab)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 221</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 323</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Modeling and Simulation</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>2</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 132, CS 211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 3231</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Modeling and Simulation (Lati)</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 132. CS-211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 324</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Methods of Research in Computer Science</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>3rd year standing</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 325</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Structure of Programming Languages.</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS211</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 1058</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>CICM in Action Environmental Planning and Management and Disaster Risk Reduction Management</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1.5</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CFE 105A</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="Short Term">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 331</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Practicum</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>6</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>4th year standing</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                    
+                                                    
+    
+    
     
     
     
     </Year>
-                    
+                            
+    
+    
     
     
     
     <Year level="4">
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="1st Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 105A</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Embracing the CICM Mission</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>1.5</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CFE 1058</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 411</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>CS Thesis 1</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS 324</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 412</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Information Assurance and Security</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>core courtes</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS413</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Professional Practice and Cyberethics</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>GETHICS, CS 231</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CSE</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Elective T</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>3rd year standing</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CSE</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Elective 2</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>3rd year standing</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                        
+                                                                                
+        
+        
         
         
         
         </Term>
-                                        
+                                                        
+        
+        
         
         
         
         <Term name="2nd Semester">
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CFE 1060</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Embracing the CICM Mission</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>15</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CFE 106A</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 421</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>CS Thesis 2</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>CS Thesis t</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CS 422</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Distributed Computing</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>4th year standing</Prerequisites>
-                                                                                
+                                                                                                                
                 
                 
-                
-                <Grade/>
-                                                                            
-            
-            
-            
-            </Course>
-                                                            
-            
-            
-            
-            <Course>
-                                                                                
-                
-                
-                
-                <CourseNumber>FOR LANG 1</CourseNumber>
-                                                                                
-                
-                
-                
-                <DescriptiveTitle>Foreign Language 1</DescriptiveTitle>
-                                                                                
-                
-                
-                
-                <Units>3</Units>
-                                                                                
-                
-                
-                
-                <Prerequisites/>
-                                                                                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
+                                                                                    
+            
+            
+            
+            
                                                             
             
             
             
+            
+            
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CSE</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Elective 3</DescriptiveTitle>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Units>3</Units>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Prerequisites>4th year standing</Prerequisites>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <Grade/>
-                                                                            
+                                                                                                            
+            
+            
             
             
             
             </Course>
-                                                            
+                                                                                    
+            
+            
             
             
             
             <Course>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <CourseNumber>CSE</CourseNumber>
-                                                                                
+                                                                                                                
+                
+                
                 
                 
                 
                 <DescriptiveTitle>Elective 4</DescriptiveTitle>
+                                                                                                                
+                
+                
+                
+                
+                
+                <Units>3</Units>
+                                                                                                                
+                
+                
+                
+                
+                
+                <Prerequisites>4th year standing</Prerequisites>
+                                                                                                                
+                
+                
+                
+                
+                
+                <Grade/>
+                                                                                                            
+            
+            
+            
+            
+            
+            </Course>
+                                                                                
+        
+        
+        
+        
+        
+        </Term>
+                                                        
+        
+        
+        
+        
+        
+        <Term name="Short Term">
+                                                                                
+            
+            
+            
+            
+            
+            <Course>
+                                                                                                
+                
+                
+                
+                
+                <CourseNumber>CS 000</CourseNumber>
+                                                                                                
+                
+                
+                
+                
+                <DescriptiveTitle>Subject 000</DescriptiveTitle>
+                                                                                                
+                
+                
+                
+                
+                <Units>0</Units>
+                                                                                                
+                
+                
+                
+                
+                <Prerequisites/>
+                                                                                                
+                
+                
+                
+                
+                <Grade>NO GRADES YET</Grade>
+                                                                                            
+            
+            
+            
+            
+            </Course>
+                                                                    
+            
+            
+            
+            
+            <Course>
+                                                                                
+                
+                
+                
+                <CourseNumber>321</CourseNumber>
+                                                                                
+                
+                
+                
+                <DescriptiveTitle>jkds</DescriptiveTitle>
                                                                                 
                 
                 
@@ -2789,88 +3958,33 @@
                 
                 
                 
-                <Prerequisites>4th year standing</Prerequisites>
+                <Prerequisites/>
                                                                                 
                 
                 
                 
-                <Grade/>
+                <Grade>NO GRADES YET</Grade>
                                                                             
             
             
             
             </Course>
                                                         
+            
         
         
         
         </Term>
-                                        
-        
-        
-        
-        <Term name="Short Term">
-                                                        
-            
-            
-            
-            <Course>
-                                                                
-                
-                
-                <CourseNumber>CS 000</CourseNumber>
-                                                                
-                
-                
-                <DescriptiveTitle>Subject 000</DescriptiveTitle>
-                                                                
-                
-                
-                <Units>0</Units>
-                                                                
-                
-                
-                <Prerequisites/>
-                                                                
-                
-                
-                <Grade>NO GRADES YET</Grade>
-                                                            
-            
-            
-            </Course>
-                                            
-            
-            
-            <Course>
-                                                
-                
-                <CourseNumber>321</CourseNumber>
-                                                
-                
-                <DescriptiveTitle>jkds</DescriptiveTitle>
-                                                
-                
-                <Units>3</Units>
-                                                
-                
-                <Prerequisites/>
-                                                
-                
-                <Grade>NO GRADES YET</Grade>
-                                            
-            
-            </Course>
-                                
-            
-        
-        </Term>
-                                    
+                                                    
+    
+    
     
     
     
     </Year>
-                
+                        
+
+
 
 
 

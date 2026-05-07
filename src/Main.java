@@ -21,7 +21,6 @@ import org.w3c.dom.NodeList;
 
 public class Main {
     public static Scanner kbd = new Scanner(System.in);
-    public static String name = new String();
     public static String filePath = "src/Data.xml";
 
     public static void main(String[] args) {
@@ -42,30 +41,6 @@ public class Main {
             e.printStackTrace();
             return;
         }
-
-        System.out.println("--------------------------------------");
-        System.out.println("Welcome to your Checklist Monitoring Application");
-        System.out.println("Please enter your information.");
-        System.out.println();
-
-        System.out.print("Enter name: ");
-        name = kbd.nextLine();
-
-        System.out.print("Year Level: ");
-        String yrLevelInput = kbd.nextLine().toLowerCase();
-        String currentYear = "1"; // Default to 1
-
-        // Fixed switch statement syntax
-        switch (yrLevelInput) {
-            case "1", "first year", "first" -> currentYear = "1";
-            case "2", "second year", "second" -> currentYear = "2";
-            case "3", "third year", "third" -> currentYear = "3";
-            case "4", "fourth year", "fourth" -> currentYear = "4";
-            case "5", "fifth year", "fifth" -> currentYear = "5";
-            default -> System.out.println("Unrecognized year. Defaulting to Year 1.");
-        }
-
-        System.out.println("\nWelcome, " + name + " (Year " + currentYear + ")");
 
         boolean running = true;
         while (running) {
