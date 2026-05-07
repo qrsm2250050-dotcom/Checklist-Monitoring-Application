@@ -17,7 +17,7 @@ import org.w3c.dom.NodeList;
 public class Main {
     public static Scanner kbd = new Scanner(System.in);
     public static String name = new String();
-    public static String filePath = "Data.xml";
+    public static String filePath = "src/Data.xml";
 
     public static void main(String[] args) {
         Document doc = null;
@@ -74,11 +74,7 @@ public class Main {
 
             switch (choice) {
                 case "1" -> {
-                    System.out.print("Enter Year Level (1, 2, 3, 4): ");
-                    String year = kbd.nextLine();
-                    System.out.print("Enter Term (e.g., '1st Semester', '2nd Semester', 'Short Term'): ");
-                    String term = kbd.nextLine();
-                    displayCoursesTable(doc, year, term);
+                    showAllSubjects(doc);
                 }
                 case "2" -> {
                     System.out.print("Enter Course Number to update (e.g., 'CS 111'): ");
@@ -101,6 +97,119 @@ public class Main {
     // ==========================================================
     // XML Methods
     // ==========================================================
+
+    public static void showAllSubjects(Document doc) {
+        System.out.println("\n===== VIEW SUBJECTS =====");
+        System.out.println("<1> View subjects (without grade column)");
+        System.out.println("<2> View subjects with grades");
+        System.out.print("Select an option: ");
+
+        String viewChoice = kbd.nextLine().trim();
+
+        switch (viewChoice) {
+            case "1" -> displayAllTerms(doc, false);
+            case "2" -> displayAllTerms(doc, true);
+            default  -> System.out.println("Invalid choice. Returning to main menu.");
+        }
+    }
+
+  //Display Method
+    public static void displayAllTerms(Document doc, boolean showGrades) {
+        NodeList yearNodes = doc.getElementsByTagName("Year");
+
+        if (yearNodes.getLength() == 0) {
+            System.out.println("No data found in " + filePath + ".");
+            return;
+        }
+
+
+        String[] yearLabels = {"", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH"};
+
+
+        String[] termKeys   = {"1st Semester", "2nd Semester", "Short Term"};
+        String[] termLabels = {"FIRST SEMESTER", "SECOND SEMESTER", "SHORT TERM"};
+
+        int tableWidth = showGrades ? 100 : 85;
+
+        // Print overall table header once
+        System.out.println("\n" + "=".repeat(tableWidth));
+        if (showGrades) {
+            System.out.printf("  %-15s | %-60s | %-10s%n", "Course Number", "Descriptive Title", "Grade");
+        } else {
+            System.out.printf("  %-15s | %-60s%n", "Course Number", "Descriptive Title");
+        }
+        System.out.println("=".repeat(tableWidth));
+
+        for (int i = 0; i < yearNodes.getLength(); i++) {
+            Element yearElement = (Element) yearNodes.item(i);
+            String yearLevel = yearElement.getAttribute("level");
+
+           //number to word
+            int yearIndex = 0;
+            try { yearIndex = Integer.parseInt(yearLevel); } catch (NumberFormatException e) { yearIndex = 0; }
+            String yearLabel = (yearIndex > 0 && yearIndex < yearLabels.length)
+                    ? yearLabels[yearIndex] + " YEAR"
+                    : "YEAR " + yearLevel;
+
+            NodeList termNodes = yearElement.getElementsByTagName("Term");
+
+            for (int j = 0; j < termNodes.getLength(); j++) {
+                Element termElement = (Element) termNodes.item(j);
+                String termName = termElement.getAttribute("name");
+
+                NodeList courseNodes = termElement.getElementsByTagName("Course");
+                int courseCount = courseNodes.getLength();
+
+                //Skips no terms w/no subject
+                if (courseCount == 0) continue;
+
+               //Labels
+                String termLabel = termName.toUpperCase();
+                for (int t = 0; t < termKeys.length; t++) {
+                    if (termKeys[t].equalsIgnoreCase(termName)) {
+                        termLabel = termLabels[t];
+                        break;
+                    }
+                }
+
+               //Divider
+                System.out.printf("  %s%n", yearLabel + " \u2014 " + termLabel);
+                System.out.println("-".repeat(tableWidth));
+
+               //Store course for array
+                String[] courseNumbers = new String[courseCount];
+                String[] titles        = new String[courseCount];
+                String[] grades        = new String[courseCount];
+
+                for (int k = 0; k < courseCount; k++) {
+                    Element course = (Element) courseNodes.item(k);
+
+                    courseNumbers[k] = getTextValue(course, "CourseNumber");
+                    titles[k]        = getTextValue(course, "DescriptiveTitle");
+                    grades[k]        = getTextValue(course, "Grade");
+
+                    // Truncate long titles to keep table clean
+                    if (titles[k].length() > 60) titles[k] = titles[k].substring(0, 57) + "...";
+                }
+
+                //Print rows
+                for (int k = 0; k < courseCount; k++) {
+                    if (showGrades) {
+                        System.out.printf("  %-15s | %-60s | %-10s%n",
+                                courseNumbers[k], titles[k], grades[k]);
+                    } else {
+                        System.out.printf("  %-15s | %-60s%n",
+                                courseNumbers[k], titles[k]);
+                    }
+                }
+
+                System.out.println("-".repeat(tableWidth));
+            }
+        }
+
+        System.out.println("=".repeat(tableWidth));
+    }
+
 
     /**
      * Searches the XML document for a specific Year and Term, then prints all courses
