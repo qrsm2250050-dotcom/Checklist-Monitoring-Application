@@ -13,6 +13,9 @@ import java.nio.file.StandardCopyOption;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 // exceptions
 import java.io.IOException;
@@ -192,8 +195,155 @@ public class Main {
                         }
                     }
                 }
+                case "2" -> {
+                    GradeEditor editor = new GradeEditor(doc, filePath, kbd);
+                    editor.showGradeMenu();
+                }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
+        }
+    }
+}
+
+/**
+ * Updates the <Grade> tag of a specific course using its Course Number.
+ */
+class GradeEditor {
+    private Document doc;
+    private String filePath;
+    private Scanner kbd;
+
+    public GradeEditor(Document doc, String filePath, Scanner kbd) {
+        this.doc = doc;
+        this.filePath = filePath;
+        this.kbd = kbd;
+    }
+
+    public void showGradeMenu() {
+        boolean inGradeMenu = true;
+        while (inGradeMenu) {
+            System.out.println("\n--- GRADE MANAGEMENT ---");
+            System.out.println("1. Edit Grade");
+            System.out.println("2. Clear Grade");
+            System.out.println("3. Save and Back to Main");
+            System.out.print("Select an option: ");
+
+            String choice = kbd.nextLine();
+            switch (choice) {
+                case "1" -> {
+                    String courseNum;
+                    while (true) {
+                        System.out.print("Enter Course Number to edit (e.g., 'CS 111') or 'exit' to cancel: ");
+                        courseNum = kbd.nextLine();
+                        if (courseNum.equalsIgnoreCase("exit")) break;
+
+                        if (courseExists(courseNum)) {
+                            String newGrade;
+                            while (true) {
+                                System.out.print("Enter new Grade (0-99): ");
+                                newGrade = kbd.nextLine();
+
+                                if (isValidGradeValue(newGrade)) {
+                                    updateGrade(courseNum, newGrade);
+                                    break;
+                                } else {
+                                    System.out.println("\n>>> Invalid Input: Grade must be a number between 0 and 99.");
+                                }
+                            }
+                            break;
+                        } else {
+                            System.out.println("\n>>> Error: Course '" + courseNum + "' not found. (Check your spacing)");
+                        }
+                    }
+                }
+                case "2" -> {
+                    while (true) {
+                        System.out.print("Enter Course Number to clear or 'exit' to cancel: ");
+                        String courseNum = kbd.nextLine();
+                        if (courseNum.equalsIgnoreCase("exit")) break;
+
+                        if (courseExists(courseNum)) {
+                            boolean validResponse = false;
+                            while (!validResponse) {
+                                System.out.print("Clear the grade for " + courseNum + "? (Y/N): ");
+                                String confirm = kbd.nextLine().trim();
+
+                                if (confirm.equalsIgnoreCase("Y")) {
+                                    updateGrade(courseNum, "");
+                                    System.out.println(">>> Grade cleared.\n");
+                                    validResponse = true;
+                                }
+                                else if (confirm.equalsIgnoreCase("N")) {
+                                    System.out.println(">>> Clear operation cancelled.");
+                                    validResponse = true;
+                                }
+                                else {
+                                    System.out.println("\n>>> Invalid input! Please enter only 'Y' for Yes or 'N' for No.");
+                                }
+                            }
+                            break;
+                        } else {
+                            System.out.println("\n>>> Error: Course '" + courseNum + "' not found.");
+                        }
+                    }
+                }
+                case "3" -> {
+                    // Note: Ensure saveXMLDocument is implemented in your Main class
+                    // or change this to call a local saving method.
+                    saveXMLFile();
+                    inGradeMenu = false;
+                }
+                default -> System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    private boolean isValidGradeValue(String input) {
+        try {
+            int grade = Integer.parseInt(input);
+            return grade >= 0 && grade <= 99;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private boolean courseExists(String targetCourse) {
+        NodeList courseList = doc.getElementsByTagName("Course");
+        for (int i = 0; i < courseList.getLength(); i++) {
+            Element element = (Element) courseList.item(i);
+            String currentCourse = element.getElementsByTagName("CourseNumber").item(0).getTextContent();
+            if (currentCourse.equalsIgnoreCase(targetCourse)) return true;
+        }
+        return false;
+    }
+
+    private void updateGrade(String targetCourse, String newGrade) {
+        NodeList courseList = doc.getElementsByTagName("Course");
+        for (int i = 0; i < courseList.getLength(); i++) {
+            Element element = (Element) courseList.item(i);
+            String currentCourse = element.getElementsByTagName("CourseNumber").item(0).getTextContent();
+            if (currentCourse.equalsIgnoreCase(targetCourse)) {
+                Node gradeNode = element.getElementsByTagName("Grade").item(0);
+                gradeNode.setTextContent(newGrade);
+                if (!newGrade.isEmpty()) {
+                    System.out.println(">>> Grade updated to " + newGrade + ".");
+                }
+                break;
+            }
+        }
+    }
+
+    // Added a local helper to handle saving if Main.saveXMLDocument is missing
+    private void saveXMLFile() {
+        try {
+            javax.xml.transform.TransformerFactory transformerFactory = javax.xml.transform.TransformerFactory.newInstance();
+            javax.xml.transform.Transformer transformer = transformerFactory.newTransformer();
+            javax.xml.transform.dom.DOMSource source = new javax.xml.transform.dom.DOMSource(doc);
+            javax.xml.transform.stream.StreamResult result = new javax.xml.transform.stream.StreamResult(new java.io.File(filePath));
+            transformer.transform(source, result);
+            System.out.println(">>> Changes saved to file.");
+        } catch (Exception e) {
+            System.out.println(">>> Error saving XML: " + e.getMessage());
         }
     }
 }
