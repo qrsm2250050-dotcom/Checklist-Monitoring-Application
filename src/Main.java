@@ -1,47 +1,53 @@
-import java.util.Arrays;
-import java.util.Scanner;
 import java.io.File;
+import java.util.Scanner;
 
 // for xml input and output
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 // for files
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 // exceptions
 import java.io.IOException;
 
 public class Main {
+    // Class variables
     public static Scanner kbd = new Scanner(System.in);
     public static String name = new String();
-    public static String filePath = "Data.xml";
-    public static String fileCopy = "Second_Data.xml";
     public static String yearInput = "";
     public static String termInput = "";
+    public static String currentYear = "1"; // Default to 1
+    public static String currentTerm = "1"; // Default to 1
+    public static String filePath = "src/Data.xml";
 
 
     public static void main(String[] args) {
-        Document doc = null;
+        Document doc;
 
-        // Welcome/Input Screen
-        /* P.S Also medyo iba yung code below from the main file since this focuses more on the user choosing
-        an option than typing their input. I changed it para tugma siya sa google docs file natin
-         */
+        try {
+            File xmlFile = new File(filePath);
 
-        System.out.println("--------------------------------------");
-        System.out.println("Welcome to your Checklist Monitoring Application");
-        System.out.println("Please enter your information.");
+            if (!xmlFile.exists()) {
+                System.out.println("Error: Could not find " + filePath);
+                return;
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+            doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
 
         // 1. Set up the user profile
         userInput();
@@ -50,13 +56,18 @@ public class Main {
         displayDashboard();
 
         // 3. Show Main Menu
-        mainMenu();
+        mainMenu(doc);
 
     }
 
     // 1. USER INPUT
     public static void userInput(){
-        // Input name
+        // Welcome/Input Screen
+
+        System.out.println("--------------------------------------");
+        System.out.println("Welcome to your Checklist Monitoring Application!");
+        System.out.println("Please enter your information.");
+
         System.out.print("Enter name: ");
         name = kbd.nextLine();
 
@@ -73,6 +84,7 @@ public class Main {
         // User will select year level
         System.out.print("Choose Year Level: ");
         yearInput = kbd.nextLine();
+        System.out.println();
 
         // Current term
         System.out.println("Current Term");
@@ -87,16 +99,21 @@ public class Main {
         termInput = kbd.nextLine();
 
         System.out.println();
+
+        // Saves user info to a txt file
+        try (PrintWriter pw = new PrintWriter(new FileWriter("UserInfo.txt"))) {
+            pw.println(name);
+            pw.println(yearInput);
+            pw.println(termInput);
+        } catch (IOException e) {
+            System.out.println("Error saving user info.");
+        }
     }
 
     // 2. DASHBOARD
     public static void displayDashboard(){
         System.out.println("Welcome to your Checklist Monitoring Application! \n" +
                 "===============DASHBOARD===============");
-
-        // Default variables for switch statements
-        String currentYear = "1"; // Default to 1
-        String currentTerm = "1"; // Default to 1
 
         // Display name
         System.out.println("NAME: " + name);
@@ -125,43 +142,55 @@ public class Main {
     }
 
     // 3. MAIN MENU
-    public static void mainMenu(){
+    public static void mainMenu(Document doc){
+        String resetDataInput = "";
+
         boolean running = true;
         while (running) {
             System.out.println("\n===== MAIN MENU =====");
-            System.out.println("0. Reset Data"); // Reset option has no function yet, will add soon
+            System.out.println("0. Reset Data");
             System.out.println("1. View Courses Table (by Year and Term)");
             System.out.println("2. Update Course Grade");
             System.out.println("3. Save and Exit");
             System.out.print("Select an option: ");
-
             String choice = kbd.nextLine();
 
+            System.out.println();
+
             switch (choice) {
-                /*
-                 case "0" -> {
-                 System.out.println("Are you sure you want to reset your data?");
-                 // clear data etc etc
-                 */
-                case "1" -> {
-                    System.out.print("Enter Year Level (1, 2, 3, 4): ");
-                    String year = kbd.nextLine();
-                    System.out.print("Enter Term (e.g., '1st Semester', '2nd Semester', 'Short Term'): ");
-                    String term = kbd.nextLine();
-                    // displayCoursesTable(doc, year, term);
-                }
-                case "2" -> {
-                    System.out.print("Enter Course Number to update (e.g., 'CS 111'): ");
-                    String courseNum = kbd.nextLine();
-                    System.out.print("Enter new Grade: ");
-                    String newGrade = kbd.nextLine();
-                    // updateCourseGrade(doc, courseNum, newGrade);
-                }
-                case "3" -> {
-                    System.out.println("Saving document...");
-                    // saveXMLDocument(doc, filePath);
-                    System.out.println("Application closed. Goodbye!");
-                    running = false;
+                case "0" -> {
+                    System.out.println("Are you sure you want to reset your data?: ");
+                    System.out.println("<1> YES, I want to reset my data and start over. \n<2> NO, go back to the Main Menu.");
+                    System.out.println();
+                    System.out.print("Select an option: ");
+                    resetDataInput = kbd.nextLine();
+
+                    switch (resetDataInput){
+                        case "1" -> {
+                            System.out.println("Resetting data...");
+
+                            //reset data
+                            try (PrintWriter pw = new PrintWriter(new FileWriter("UserInfo.txt"))) {  // Opens UserInfo.txt
+                                pw.print(""); // clears all data inside UserInfo.txt
+                            } catch (IOException e) { System.out.println("Error clearing user info."); }
+                            try {
+                                Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING); // Copies the clean file to the original copy
+                            } catch (IOException e) { System.out.println("Error saving user info."); }
+
+                            // Reset class variables
+                            name = "";
+                            currentYear = "";
+                            currentTerm = "";
+
+                            System.out.println("Reset successful! Please input your information again.");
+                            userInput();
+                            displayDashboard();
+                        }
+
+                        case "2" -> {
+                            System.out.println("Going back to the Main Menu...");
+                        }
+                    }
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
