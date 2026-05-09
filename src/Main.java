@@ -2,6 +2,12 @@ import java.io.File;
 import java.util.Scanner;
 
 // for xml input and output
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 // for files
 import java.io.FileWriter;
@@ -11,8 +17,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 import org.w3c.dom.Document;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -60,13 +64,11 @@ public class Main {
 
         // 3. Show Main Menu
         mainMenu(doc);
-
     }
 
     // 1. USER INPUT
     public static void userInput(){
         // Welcome/Input Screen
-
         System.out.println("--------------------------------------");
         System.out.println("Welcome to your Checklist Monitoring Application!");
         System.out.println("Please enter your information.");
@@ -80,7 +82,7 @@ public class Main {
         System.out.println("Year Level");
         String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year"};
         for (int i = 0; i < yearArray.length; i++) {
-            System.out.println("<" + (i + 1) + "> " + yearArray[i]); // for loop to display year level menu
+            System.out.println("<" + (i + 1) + "> " + yearArray[i]); 
         }
         System.out.println();
 
@@ -93,7 +95,7 @@ public class Main {
         System.out.println("Current Term");
         String[] semesterArray = {"First Semester", "Second Semester", "Short Term"};
         for (int i = 0; i < semesterArray.length; i++) {
-            System.out.println("<" + (i + 1) + "> " + semesterArray[i]); // for loop to display current term menu
+            System.out.println("<" + (i + 1) + "> " + semesterArray[i]); 
         }
         System.out.println();
 
@@ -141,29 +143,31 @@ public class Main {
         }
         System.out.println("CURRENT TERM: " + currentTerm); // Display current term
 
-        System.out.println("Welcome, " + name + "!" + " (" + currentYear + ", " + currentTerm + ")"); // Welcome message
+        System.out.println("Welcome, " + name + "!" + " (" + currentYear + ", " + currentTerm + ")"); 
     }
 
     // 3. MAIN MENU
     public static void mainMenu(Document doc){
         String resetDataInput = "";
-
         boolean running = true;
+        
         while (running) {
             System.out.println("\n===== MAIN MENU =====");
-            System.out.println("0. Reset Data");
-            System.out.println("1. View Courses Table (by Year and Term)");
-            System.out.println("2. Update Course Grade");
-            System.out.println("3. Save and Exit");
+            System.out.println("<0> Reset data");
+            System.out.println("<1> Show subjects for each school term");
+            System.out.println("<2> Show subjects with grades for current term");
+            System.out.println("<3> Enter grades for subjects recently finished");
+            System.out.println("<4> Edit a course grade");
+            System.out.println("<5> Edit personal information");
+            System.out.println("<6> Save and exit");
             System.out.print("Select an option: ");
             String choice = kbd.nextLine();
 
-            System.out.println();
-
             switch (choice) {
                 case "0" -> {
-                    System.out.println("Are you sure you want to reset your data?: ");
-                    System.out.println("<1> YES, I want to reset my data and start over. \n<2> NO, go back to the Main Menu.");
+                    System.out.println("\nAre you sure you want to reset your data?: ");
+                    System.out.println("<1> YES, I want to reset my data and start over.");
+                    System.out.println("<2> NO, go back to the Main Menu.");
                     System.out.println();
                     System.out.print("Select an option: ");
                     resetDataInput = kbd.nextLine();
@@ -171,16 +175,14 @@ public class Main {
                     switch (resetDataInput){
                         case "1" -> {
                             System.out.println("Resetting data...");
-
-                            //reset data
-                            try (PrintWriter pw = new PrintWriter(new FileWriter("UserInfo.txt"))) {  // Opens UserInfo.txt
-                                pw.print(""); // clears all data inside UserInfo.txt
+                            try (PrintWriter pw = new PrintWriter(new FileWriter("UserInfo.txt"))) {  
+                                pw.print(""); 
                             } catch (IOException e) { System.out.println("Error clearing user info."); }
+                            
                             try {
-                                Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING); // Copies the clean file to the original copy
+                                Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING); 
                             } catch (IOException e) { System.out.println("Error saving user info."); }
 
-                            // Reset class variables
                             name = "";
                             currentYear = "";
                             currentTerm = "";
@@ -189,24 +191,94 @@ public class Main {
                             userInput();
                             displayDashboard();
                         }
-
                         case "2" -> {
                             System.out.println("Going back to the Main Menu...");
                         }
                     }
                 }
-
-                case "1" ->
-                    showAllSubjects(doc);
-
-                case "2" -> {
+                case "1" -> showAllSubjects(doc);
+                case "2" -> displayCoursesTable(doc, yearInput, getXmlTerm());
+                case "3" -> enterGradesCurrentTerm(doc);
+                case "4" -> {
                     GradeEditor editor = new GradeEditor(doc, filePath, kbd);
                     editor.showGradeMenu();
+                }
+                case "5" -> {
+                    userInput();
+                    displayDashboard();
+                }
+                case "6" -> {
+                    System.out.println("Saving document...");
+                    saveXMLFile(doc);
+                    System.out.println("Application closed. Goodbye!");
+                    running = false;
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
         }
     }
+
+    // Maps the user's term choice (1, 2, 3) to the actual term names in the XML
+    private static String getXmlTerm() {
+        return switch (termInput) {
+            case "1" -> "1st Semester";
+            case "2" -> "2nd Semester";
+            case "3" -> "Short Term";
+            default -> "1st Semester";
+        };
+    }
+
+    public static void enterGradesCurrentTerm(Document doc) {
+        String xmlYear = yearInput;
+        String xmlTerm = getXmlTerm();
+
+        System.out.println("\n--- Entering Grades for " + currentYear + " | " + currentTerm + " ---");
+        NodeList yearNodes = doc.getElementsByTagName("Year");
+        boolean termFound = false;
+
+        for (int i = 0; i < yearNodes.getLength(); i++) {
+            Element yearElement = (Element) yearNodes.item(i);
+            if (yearElement.getAttribute("level").equals(xmlYear)) {
+                NodeList termNodes = yearElement.getElementsByTagName("Term");
+                
+                for (int j = 0; j < termNodes.getLength(); j++) {
+                    Element termElement = (Element) termNodes.item(j);
+                    
+                    if (termElement.getAttribute("name").equalsIgnoreCase(xmlTerm)) {
+                        termFound = true;
+                        NodeList courseNodes = termElement.getElementsByTagName("Course");
+                        
+                        for (int k = 0; k < courseNodes.getLength(); k++) {
+                            Element course = (Element) courseNodes.item(k);
+                            String cNumber = getTextValue(course, "CourseNumber");
+                            String cTitle = getTextValue(course, "DescriptiveTitle");
+                            String currentGrade = getTextValue(course, "Grade");
+
+                            System.out.print("Enter grade for " + cNumber + " - " + cTitle + " (Current: " + currentGrade + ") [Press Enter to skip]: ");
+                            String newGrade = kbd.nextLine();
+
+                            if (!newGrade.trim().isEmpty()) {
+                                NodeList gradeList = course.getElementsByTagName("Grade");
+                                if (gradeList.getLength() > 0) {
+                                    gradeList.item(0).setTextContent(newGrade);
+                                } else {
+                                    Element newGradeElem = doc.createElement("Grade");
+                                    newGradeElem.setTextContent(newGrade);
+                                    course.appendChild(newGradeElem);
+                                }
+                                System.out.println(">>> Grade updated.");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (!termFound) {
+            System.out.println("Could not find entries for Year: " + xmlYear + " and Term: " + xmlTerm);
+        }
+    }
+
     public static void showAllSubjects(Document doc) {
         System.out.println("\n===== VIEW SUBJECTS =====");
         System.out.println("<1> View subjects (without grade column)");
@@ -231,10 +303,7 @@ public class Main {
             return;
         }
 
-
         String[] yearLabels = {"", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH"};
-
-
         String[] termKeys   = {"1st Semester", "2nd Semester", "Short Term"};
         String[] termLabels = {"FIRST SEMESTER", "SECOND SEMESTER", "SHORT TERM"};
 
@@ -383,7 +452,21 @@ public class Main {
         }
         return "";
     }
+
+    public static void saveXMLFile(Document doc) {
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(filePath));
+            transformer.transform(source, result);
+            System.out.println(">>> Changes saved to file.");
+        } catch (Exception e) {
+            System.out.println(">>> Error saving XML: " + e.getMessage());
+        }
+    }
 }
+
 /**
  * Updates the <Grade> tag of a specific course using its Course Number.
  */
@@ -467,8 +550,6 @@ class GradeEditor {
                     }
                 }
                 case "3" -> {
-                    // Note: Ensure saveXMLDocument is implemented in your Main class
-                    // or change this to call a local saving method.
                     saveXMLFile();
                     inGradeMenu = false;
                 }
@@ -512,7 +593,6 @@ class GradeEditor {
         }
     }
 
-    // Added a local helper to handle saving if Main.saveXMLDocument is missing
     private void saveXMLFile() {
         try {
             javax.xml.transform.TransformerFactory transformerFactory = javax.xml.transform.TransformerFactory.newInstance();
