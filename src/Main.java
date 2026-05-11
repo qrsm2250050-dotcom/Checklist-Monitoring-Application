@@ -301,7 +301,9 @@ public class Main {
                                     course.appendChild(newGradeElem);
                                 }
                                 System.out.println(">>> Grade updated.");
+
                             }
+
                         }
                     }
                 }
@@ -311,6 +313,7 @@ public class Main {
         if (!termFound) {
             System.out.println("Could not find entries for Year: " + xmlYear + " and Term: " + xmlTerm);
         }
+        displayCoursesTable(doc, yearInput, getXmlTerm());
     }
 
     public static void showAllSubjects(Document doc) {
