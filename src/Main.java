@@ -1,4 +1,7 @@
-import java.io.File;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.util.List;
 import java.util.Scanner;
 
 // for xml input and output
@@ -10,8 +13,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 // for files
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
@@ -21,8 +22,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import static java.nio.file.Files.readAllLines;
+
 // exceptions
-import java.io.IOException;
+
 
 public class Main {
     // Class variables
@@ -33,6 +36,7 @@ public class Main {
     public static String currentYear = "1"; // Default to 1
     public static String currentTerm = "1"; // Default to 1
     public static String filePath = "src/Data.xml";
+    public static String userInfo = "src/userinfo.txt";
 
 
     public static void main(String[] args) {
@@ -56,8 +60,30 @@ public class Main {
             return;
         }
 
-        // 1. Set up the user profile
-        userInput();
+        Document doc2;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(userInfo))) {
+            File userinfoTxt = new File(userInfo);
+            String line = "";
+            String line2 = "";
+            String line3 = "";
+            int lineNumber = 0;
+            if (!userinfoTxt.exists() || userinfoTxt.length() == 0) {
+                userInput();
+            } else {
+                if (!line.contains("Name: ")) {
+                    userInput();
+                } else if (!line2.contains("Year: ")) {
+                    userInput();
+                } else if (!line2.contains("Term: ")) {
+                    userInput();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
 
         // 2. Display dashboard
         displayDashboard();
@@ -75,6 +101,13 @@ public class Main {
 
         System.out.print("Enter name: ");
         name = kbd.nextLine();
+        try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
+            Path uIPath = Paths.get(userInfo);
+            List<String> uI = readAllLines(uIPath, StandardCharsets.UTF_8);
+            uI.add(0, name);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println();
 
@@ -106,7 +139,7 @@ public class Main {
         System.out.println();
 
         // Saves user info to a txt file
-        try (PrintWriter pw = new PrintWriter(new FileWriter("UserInfo.txt"))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
             pw.println(name);
             pw.println(yearInput);
             pw.println(termInput);
@@ -117,6 +150,7 @@ public class Main {
 
     // 2. DASHBOARD
     public static void displayDashboard(){
+
         System.out.println("Welcome to your Checklist Monitoring Application! \n" +
                 "===============DASHBOARD===============");
 
