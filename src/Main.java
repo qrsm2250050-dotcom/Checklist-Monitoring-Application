@@ -1,7 +1,5 @@
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
-import java.util.List;
 import java.util.Scanner;
 
 // for xml input and output
@@ -22,7 +20,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import static java.nio.file.Files.readAllLines;
 
 // exceptions
 
@@ -60,24 +57,34 @@ public class Main {
             return;
         }
 
-        Document doc2;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(userInfo))) {
+        try {
             File userinfoTxt = new File(userInfo);
-            String line = "";
-            String line2 = "";
-            String line3 = "";
-            int lineNumber = 0;
+            String content = Files.readString(Path.of("userinfo.txt"));
+
             if (!userinfoTxt.exists() || userinfoTxt.length() == 0) {
                 userInput();
             } else {
-                if (!line.contains("Name: ")) {
-                    userInput();
-                } else if (!line2.contains("Year: ")) {
-                    userInput();
-                } else if (!line2.contains("Term: ")) {
+                BufferedReader br = new BufferedReader(new FileReader("src/userinfo.txt"));
+
+                String line = br.readLine();
+                String line2 = br.readLine();
+                String line3 = br.readLine();
+
+                if (line == null || !line.contains("Name:")) {
                     userInput();
                 }
+                if (line2 == null || !line2.contains("Year:")) {
+                    userInput();
+                }
+                if (line3 == null || !line3.contains("Term:")) {
+                    userInput();
+                } else {
+                    name = line.substring(line.indexOf(":") + 1).trim();
+                    yearInput = line2.substring(line2.indexOf(":") + 1).trim();
+                    termInput = line3.substring(line3.indexOf(":") + 1).trim();
+                }
+
+                br.close();
             }
 
         } catch (Exception e) {
@@ -94,6 +101,9 @@ public class Main {
 
     // 1. USER INPUT
     public static void userInput(){
+
+
+
         // Welcome/Input Screen
         System.out.println("--------------------------------------");
         System.out.println("Welcome to your Checklist Monitoring Application!");
@@ -101,13 +111,6 @@ public class Main {
 
         System.out.print("Enter name: ");
         name = kbd.nextLine();
-        try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
-            Path uIPath = Paths.get(userInfo);
-            List<String> uI = readAllLines(uIPath, StandardCharsets.UTF_8);
-            uI.add(0, name);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         System.out.println();
 
@@ -115,7 +118,7 @@ public class Main {
         System.out.println("Year Level");
         String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year"};
         for (int i = 0; i < yearArray.length; i++) {
-            System.out.println("<" + (i + 1) + "> " + yearArray[i]); 
+            System.out.println("<" + (i + 1) + "> " + yearArray[i]);
         }
         System.out.println();
 
@@ -128,7 +131,7 @@ public class Main {
         System.out.println("Current Term");
         String[] semesterArray = {"First Semester", "Second Semester", "Short Term"};
         for (int i = 0; i < semesterArray.length; i++) {
-            System.out.println("<" + (i + 1) + "> " + semesterArray[i]); 
+            System.out.println("<" + (i + 1) + "> " + semesterArray[i]);
         }
         System.out.println();
 
@@ -140,9 +143,9 @@ public class Main {
 
         // Saves user info to a txt file
         try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
-            pw.println(name);
-            pw.println(yearInput);
-            pw.println(termInput);
+            pw.println("Name: " + name);
+            pw.println("Year: " + yearInput);
+            pw.println("Term: " + termInput);
         } catch (IOException e) {
             System.out.println("Error saving user info.");
         }
@@ -177,7 +180,7 @@ public class Main {
         }
         System.out.println("CURRENT TERM: " + currentTerm); // Display current term
 
-        System.out.println("Welcome, " + name + "!" + " (" + currentYear + ", " + currentTerm + ")"); 
+        System.out.println("Welcome, " + name + "!" + " (" + currentYear + ", " + currentTerm + ")");
     }
 
     // 3. MAIN MENU
@@ -209,9 +212,11 @@ public class Main {
                     switch (resetDataInput){
                         case "1" -> {
                             System.out.println("Resetting data...");
-                            try (PrintWriter pw = new PrintWriter(new FileWriter("UserInfo.txt"))) {  
+                            try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
                                 pw.print(""); 
-                            } catch (IOException e) { System.out.println("Error clearing user info."); }
+                            } catch (IOException e) {
+                                System.out.println("Error clearing user info.");
+                            }
                             
                             try {
                                 Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING); 
