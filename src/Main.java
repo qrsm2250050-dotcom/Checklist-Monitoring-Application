@@ -1,5 +1,4 @@
 import java.io.*;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -27,6 +26,9 @@ public class Main {
     public static String currentTerm = "1";
     public static String filePath = "src/Data.xml";
     public static String userInfo = "src/userinfo.txt";
+    public static String courseCode = "";
+    public static String descriptiveTitle = "";
+    public static double units = 0;
 
     public static String getFormattedInput(Scanner scanner) {
         String input = scanner.nextLine();
@@ -69,13 +71,13 @@ public class Main {
                 String line2 = br.readLine();
                 String line3 = br.readLine();
 
-                if (line == null || !line.contains("Name:")) {
+                if (line.isEmpty() || !line.contains("Name:")) {
                     userInput();
                 }
-                if (line2 == null || !line2.contains("Year:")) {
+                if (line2.isEmpty() || !line2.contains("Year:")) {
                     userInput();
                 }
-                if (line3 == null || !line3.contains("Term:")) {
+                if (line3.isEmpty() || !line3.contains("Term:")) {
                     userInput();
                 } else {
                     name = line.substring(line.indexOf(":") + 1).trim();
@@ -97,7 +99,7 @@ public class Main {
         mainMenu(doc);
     }
 
-    public static void userInput(){
+    public static void userInput() {
         System.out.println("======================================");
         System.out.println("Welcome to your Checklist Monitoring Application!");
         System.out.println("Please enter your information.");
@@ -151,7 +153,7 @@ public class Main {
         }
     }
 
-    public static void displayDashboard(){
+    public static void displayDashboard() {
         switch (yearInput) {
             case "1" -> currentYear = "First Year";
             case "2" -> currentYear = "Second Year";
@@ -175,7 +177,7 @@ public class Main {
         }
     }
 
-    public static void mainMenu(Document doc){
+    public static void mainMenu(Document doc) {
         String resetDataInput = "";
         boolean running = true;
 
@@ -191,15 +193,16 @@ public class Main {
             System.out.println("<2> Show subjects with grades for current term");
             System.out.println("<3> Enter grades for subjects recently finished");
             System.out.println("<4> Edit a course grade");
-            System.out.println("<5> Edit personal information");
-            System.out.println("<6> Save and exit");
+            System.out.println("<5> Add additional course");
+            System.out.println("<6> Edit personal information");
+            System.out.println("<7> Save and exit");
             System.out.print("Select an option: ");
 
             String choice;
             while (true) {
                 choice = getFormattedInput(kbd);
-                if (choice.matches("[0-6]")) break;
-                System.out.print("Invalid choice. Select an option (0-6): ");
+                if (choice.matches("[0-7]")) break;
+                System.out.print("Invalid choice. Select an option (0-7): ");
             }
 
             switch (choice) {
@@ -216,7 +219,7 @@ public class Main {
                         System.out.print("Invalid input. Select an option (1-2): ");
                     }
 
-                    switch (resetDataInput){
+                    switch (resetDataInput) {
                         case "1" -> {
                             System.out.println("Resetting data...");
                             try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
@@ -227,7 +230,9 @@ public class Main {
 
                             try {
                                 Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING);
-                            } catch (IOException e) { System.out.println("Error saving user info."); }
+                            } catch (IOException e) {
+                                System.out.println("Error saving user info.");
+                            }
 
                             name = "";
                             currentYear = "";
@@ -249,11 +254,16 @@ public class Main {
                     GradeEditor editor = new GradeEditor(doc, filePath, kbd);
                     editor.showGradeMenu();
                 }
-                case "5" -> {
+
+                case "5" ->  {
+                    addCourse(doc);
+                }
+
+                case "6" -> {
                     userInput();
                     displayDashboard();
                 }
-                case "6" -> {
+                case "7" -> {
                     System.out.println("Saving document...");
                     saveXMLFile(doc);
                     System.out.println("Application closed. Goodbye!");
@@ -337,6 +347,178 @@ public class Main {
         displayCoursesTable(doc, yearInput, getXmlTerm());
     }
 
+    public static void addCourse(Document doc) {
+        System.out.println("\n=========== Add Course ===========");
+        System.out.println("Please enter the following information:");
+        do {
+            System.out.print("Course Code: ");
+            courseCode = kbd.nextLine().trim();
+            if (courseCode.isEmpty()) {
+                System.out.println("Course code cannot be empty. Please try again.");
+            }
+        } while (courseCode.isEmpty());
+
+        do {
+            System.out.print("Descriptive Title: ");
+            descriptiveTitle = kbd.nextLine().trim();
+            if (descriptiveTitle.isEmpty()) {
+                System.out.println("Descriptive title cannot be empty. Please try again.");
+            }
+        } while (descriptiveTitle.isEmpty());
+
+        String preReq;
+        do {
+            System.out.print("Prerequisites (separate by comma): ");
+            preReq = kbd.nextLine();
+            if (preReq.isEmpty()) {
+                System.out.println("Input cannot be empty. Please try again.");
+            }
+        } while (preReq.isEmpty());
+
+        String[] preq = preReq.split(",");
+        for (String p : preq) {
+            p.trim();
+        }
+        String preqFinal = String.join(", ", preq);
+
+        do {
+            try {
+                System.out.print("Units: ");
+                units = Double.parseDouble(kbd.nextLine());
+
+                if (units <= 0) {
+                    System.out.println("Units must be greater than zero.");
+                }
+
+            } catch (NumberFormatException e) {
+                units = -1;
+                System.out.println("Invalid number.");
+            }
+        } while (units <= 0);
+
+        try {
+            String xmlYear = "";
+            switch (currentYear.trim()) {
+
+                case "First Year":
+                    xmlYear = "1";
+                    break;
+
+                case "Second Year":
+                    xmlYear = "2";
+                    break;
+
+                case "Third Year":
+                    xmlYear = "3";
+                    break;
+
+                case "Fourth Year":
+                    xmlYear = "4";
+                    break;
+
+                case "Fifth Year":
+                    xmlYear = "5";
+                    break;
+            }
+
+            String xmlTerm = "";
+
+            switch (currentTerm.trim()) {
+
+                case "First Semester":
+                    xmlTerm = "1st Semester";
+                    break;
+
+                case "Second Semester":
+                    xmlTerm = "2nd Semester";
+                    break;
+
+                case "Short Term":
+                    xmlTerm = "Short Term";
+                    break;
+            }
+
+            NodeList yearNodes = doc.getElementsByTagName("Year");
+
+            Element targetTerm = null;
+
+            for (int i = 0; i < yearNodes.getLength(); i++) {
+                Element yearElement = (Element) yearNodes.item(i);
+                String level = yearElement.getAttribute("level");
+                if (level.equals(xmlYear)) {
+                    NodeList termList = yearElement.getElementsByTagName("Term");
+                    for (int j = 0; j < termList.getLength(); j++) {
+                        Element termElement = (Element) termList.item(j);
+                        String termName = termElement.getAttribute("name");
+                        if (termName.equals(xmlTerm)) {
+                            targetTerm = termElement;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (targetTerm == null) {
+                System.out.println("Current year/term not found.");
+                return;
+            }
+
+            Element course = doc.createElement("Course");
+
+            Element courseNumber = doc.createElement("CourseNumber");
+            courseNumber.appendChild(doc.createTextNode(courseCode));
+            course.appendChild(courseNumber);
+
+            Element title = doc.createElement("DescriptiveTitle");
+            title.appendChild(doc.createTextNode(descriptiveTitle));
+            course.appendChild(title);
+
+            Element unitsElement = doc.createElement("Units");
+            unitsElement.appendChild(doc.createTextNode(String.valueOf(units)));
+            course.appendChild(unitsElement);
+
+            Element prereq = doc.createElement("Prerequisites");
+            prereq.appendChild(doc.createTextNode(preqFinal));
+            course.appendChild(prereq);
+
+            Element gradeElement = doc.createElement("Grade");
+            gradeElement.appendChild(doc.createTextNode("NO GRADES YET"));
+            course.appendChild(gradeElement);
+
+            targetTerm.appendChild(course);
+
+            doc.getDocumentElement().normalize();
+            removeWhitespaceNodes(doc.getDocumentElement());
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(filePath);
+            transformer.transform(source, result);
+
+            System.out.println("\nCourse added successfully!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void removeWhitespaceNodes(Node node) {
+
+        NodeList children = node.getChildNodes();
+        for (int i = children.getLength() - 1; i >= 0; i--) {
+            Node child = children.item(i);
+            if (child.getNodeType() == Node.TEXT_NODE &&
+                    child.getTextContent().trim().isEmpty()) {
+                node.removeChild(child);
+            } else if (child.hasChildNodes()) {
+                removeWhitespaceNodes(child);
+            }
+        }
+    }
+
     public static void showAllSubjects(Document doc) {
         System.out.println("\n===== VIEW SUBJECTS =====");
         System.out.println("<1> View subjects (without grade column)");
@@ -353,7 +535,7 @@ public class Main {
         switch (viewChoice) {
             case "1" -> displayAllTerms(doc, false);
             case "2" -> displayAllTerms(doc, true);
-            default  -> System.out.println("Invalid choice. Returning to main menu.");
+            default -> System.out.println("Invalid choice. Returning to main menu.");
         }
     }
 
@@ -366,7 +548,7 @@ public class Main {
         }
 
         String[] yearLabels = {"", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH"};
-        String[] termKeys   = {"1st Semester", "2nd Semester", "Short Term"};
+        String[] termKeys = {"1st Semester", "2nd Semester", "Short Term"};
         String[] termLabels = {"FIRST SEMESTER", "SECOND SEMESTER", "SHORT TERM"};
 
         int tableWidth = showGrades ? 100 : 85;
@@ -384,7 +566,11 @@ public class Main {
             String yearLevel = yearElement.getAttribute("level");
 
             int yearIndex = 0;
-            try { yearIndex = Integer.parseInt(yearLevel); } catch (NumberFormatException e) { yearIndex = 0; }
+            try {
+                yearIndex = Integer.parseInt(yearLevel);
+            } catch (NumberFormatException e) {
+                yearIndex = 0;
+            }
             String yearLabel = (yearIndex > 0 && yearIndex < yearLabels.length)
                     ? yearLabels[yearIndex] + " YEAR"
                     : "YEAR " + yearLevel;
@@ -412,15 +598,15 @@ public class Main {
                 System.out.println("-".repeat(tableWidth));
 
                 String[] courseNumbers = new String[courseCount];
-                String[] titles        = new String[courseCount];
-                String[] grades        = new String[courseCount];
+                String[] titles = new String[courseCount];
+                String[] grades = new String[courseCount];
 
                 for (int k = 0; k < courseCount; k++) {
                     Element course = (Element) courseNodes.item(k);
 
                     courseNumbers[k] = getTextValue(course, "CourseNumber");
-                    titles[k]        = getTextValue(course, "DescriptiveTitle");
-                    grades[k]        = getTextValue(course, "Grade");
+                    titles[k] = getTextValue(course, "DescriptiveTitle");
+                    grades[k] = getTextValue(course, "Grade");
 
                     if (titles[k].length() > 60) titles[k] = titles[k].substring(0, 57) + "...";
                 }
@@ -583,12 +769,10 @@ class GradeEditor {
                                 System.out.println(">>> Grade cleared.\n");
                                 saveXMLFile();
                                 validResponse = true;
-                            }
-                            else if (confirm.equalsIgnoreCase("N")) {
+                            } else if (confirm.equalsIgnoreCase("N")) {
                                 System.out.println(">>> Clear operation cancelled.");
                                 validResponse = true;
-                            }
-                            else {
+                            } else {
                                 System.out.println("\n>>> Invalid input! Please enter only 'Y' for Yes or 'N' for No.");
                             }
                         }
