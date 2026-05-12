@@ -59,12 +59,11 @@ public class Main {
 
         try {
             File userinfoTxt = new File(userInfo);
-            String content = Files.readString(Path.of("userinfo.txt"));
 
             if (!userinfoTxt.exists() || userinfoTxt.length() == 0) {
                 userInput();
             } else {
-                BufferedReader br = new BufferedReader(new FileReader("src/userinfo.txt"));
+                BufferedReader br = new BufferedReader(new FileReader(userInfo));
 
                 String line = br.readLine();
                 String line2 = br.readLine();
