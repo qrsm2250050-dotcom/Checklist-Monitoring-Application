@@ -2,7 +2,6 @@ import java.io.*;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-// for xml input and output
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -10,7 +9,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-// for files
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
@@ -21,13 +19,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Main {
-    // Class variables
     public static Scanner kbd = new Scanner(System.in);
     public static String name = new String();
     public static String yearInput = "";
     public static String termInput = "";
-    public static String currentYear = "1"; // Default to 1
-    public static String currentTerm = "1"; // Default to 1
+    public static String currentYear = "1";
+    public static String currentTerm = "1";
     public static String filePath = "src/Data.xml";
     public static String userInfo = "src/userinfo.txt";
 
@@ -94,28 +91,26 @@ public class Main {
             return;
         }
 
-        // 2. Display dashboard variables
         displayDashboard();
         System.out.println("Welcome, " + name + "!");
 
-        // 3. Show Main Menu
         mainMenu(doc);
     }
 
-    // 1. USER INPUT
     public static void userInput(){
-
-        // Welcome/Input Screen
         System.out.println("======================================");
         System.out.println("Welcome to your Checklist Monitoring Application!");
         System.out.println("Please enter your information.");
 
         System.out.print("Enter name: ");
-        name = getFormattedInput(kbd);
+        while (true) {
+            name = getFormattedInput(kbd);
+            if (!name.isEmpty()) break;
+            System.out.print("Name cannot be empty. Enter name: ");
+        }
 
         System.out.println();
 
-        // Year level
         System.out.println("Year Level");
         String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year", "Fifth Year"};
         for (int i = 0; i < yearArray.length; i++) {
@@ -123,12 +118,14 @@ public class Main {
         }
         System.out.println();
 
-        // User will select year level
         System.out.print("Choose Year Level: ");
-        yearInput = getFormattedInput(kbd);
+        while (true) {
+            yearInput = getFormattedInput(kbd);
+            if (yearInput.matches("[1-5]")) break;
+            System.out.print("Invalid input. Choose Year Level (1-5): ");
+        }
         System.out.println();
 
-        // Current term
         System.out.println("Current Term");
         String[] semesterArray = {"First Semester", "Second Semester", "Short Term"};
         for (int i = 0; i < semesterArray.length; i++) {
@@ -136,13 +133,15 @@ public class Main {
         }
         System.out.println();
 
-        // User will select current term
         System.out.print("Choose Current Term: ");
-        termInput = getFormattedInput(kbd);
+        while (true) {
+            termInput = getFormattedInput(kbd);
+            if (termInput.matches("[1-3]")) break;
+            System.out.print("Invalid input. Choose Current Term (1-3): ");
+        }
 
         System.out.println();
 
-        // Saves user info to a txt file
         try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
             pw.println("Name: " + name);
             pw.println("Year: " + yearInput);
@@ -152,9 +151,7 @@ public class Main {
         }
     }
 
-    // 2. DASHBOARD
     public static void displayDashboard(){
-        // Switch statements for current year
         switch (yearInput) {
             case "1" -> currentYear = "First Year";
             case "2" -> currentYear = "Second Year";
@@ -167,7 +164,6 @@ public class Main {
             }
         }
 
-        // Switch statements for current term
         switch (termInput) {
             case "1" -> currentTerm = "First Semester";
             case "2" -> currentTerm = "Second Semester";
@@ -179,7 +175,6 @@ public class Main {
         }
     }
 
-    // 3. MAIN MENU
     public static void mainMenu(Document doc){
         String resetDataInput = "";
         boolean running = true;
@@ -199,7 +194,13 @@ public class Main {
             System.out.println("<5> Edit personal information");
             System.out.println("<6> Save and exit");
             System.out.print("Select an option: ");
-            String choice = getFormattedInput(kbd);
+
+            String choice;
+            while (true) {
+                choice = getFormattedInput(kbd);
+                if (choice.matches("[0-6]")) break;
+                System.out.print("Invalid choice. Select an option (0-6): ");
+            }
 
             switch (choice) {
                 case "0" -> {
@@ -208,7 +209,12 @@ public class Main {
                     System.out.println("<2> NO, go back to the Main Menu.");
                     System.out.println();
                     System.out.print("Select an option: ");
-                    resetDataInput = getFormattedInput(kbd);
+
+                    while (true) {
+                        resetDataInput = getFormattedInput(kbd);
+                        if (resetDataInput.matches("[1-2]")) break;
+                        System.out.print("Invalid input. Select an option (1-2): ");
+                    }
 
                     switch (resetDataInput){
                         case "1" -> {
@@ -258,7 +264,6 @@ public class Main {
         }
     }
 
-    // Maps the user's term choice (1, 2, 3) to the actual term names in the XML
     private static String getXmlTerm() {
         return switch (termInput) {
             case "1" -> "1st Semester";
@@ -294,8 +299,19 @@ public class Main {
                             String cTitle = getTextValue(course, "DescriptiveTitle");
                             String currentGrade = getTextValue(course, "Grade");
 
-                            System.out.print("Enter grade for " + cNumber + " - " + cTitle + " (Current: " + currentGrade + ") [Press Enter to skip]: ");
-                            String newGrade = getFormattedInput(kbd);
+                            String newGrade;
+                            while (true) {
+                                System.out.print("Enter grade for " + cNumber + " - " + cTitle + " (Current: " + currentGrade + ") [Press Enter to skip]: ");
+                                newGrade = getFormattedInput(kbd);
+                                if (newGrade.isEmpty()) break;
+                                try {
+                                    int g = Integer.parseInt(newGrade);
+                                    if (g >= 65 && g <= 99) break;
+                                    System.out.println("Invalid Grade. Must be between 65 and 99.");
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Invalid Input. Enter a number between 65 and 99.");
+                                }
+                            }
 
                             if (!newGrade.trim().isEmpty()) {
                                 NodeList gradeList = course.getElementsByTagName("Grade");
@@ -307,7 +323,6 @@ public class Main {
                                     course.appendChild(newGradeElem);
                                 }
                                 System.out.println(">>> Grade updated.");
-
                             }
 
                         }
@@ -328,7 +343,12 @@ public class Main {
         System.out.println("<2> View subjects with grades");
         System.out.print("Select an option: ");
 
-        String viewChoice = getFormattedInput(kbd);
+        String viewChoice;
+        while (true) {
+            viewChoice = getFormattedInput(kbd);
+            if (viewChoice.matches("[1-2]")) break;
+            System.out.print("Invalid choice. Select an option (1-2): ");
+        }
 
         switch (viewChoice) {
             case "1" -> displayAllTerms(doc, false);
@@ -337,7 +357,6 @@ public class Main {
         }
     }
 
-    //Display Method
     public static void displayAllTerms(Document doc, boolean showGrades) {
         NodeList yearNodes = doc.getElementsByTagName("Year");
 
@@ -352,7 +371,6 @@ public class Main {
 
         int tableWidth = showGrades ? 100 : 85;
 
-        // Print overall table header once
         System.out.println("\n" + "=".repeat(tableWidth));
         if (showGrades) {
             System.out.printf("  %-15s | %-60s | %-10s%n", "Course Number", "Descriptive Title", "Grade");
@@ -365,7 +383,6 @@ public class Main {
             Element yearElement = (Element) yearNodes.item(i);
             String yearLevel = yearElement.getAttribute("level");
 
-            //number to word
             int yearIndex = 0;
             try { yearIndex = Integer.parseInt(yearLevel); } catch (NumberFormatException e) { yearIndex = 0; }
             String yearLabel = (yearIndex > 0 && yearIndex < yearLabels.length)
@@ -381,10 +398,8 @@ public class Main {
                 NodeList courseNodes = termElement.getElementsByTagName("Course");
                 int courseCount = courseNodes.getLength();
 
-                //Skips no terms w/no subject
                 if (courseCount == 0) continue;
 
-                //Labels
                 String termLabel = termName.toUpperCase();
                 for (int t = 0; t < termKeys.length; t++) {
                     if (termKeys[t].equalsIgnoreCase(termName)) {
@@ -393,11 +408,9 @@ public class Main {
                     }
                 }
 
-                //Divider
                 System.out.printf("  %s%n", yearLabel + " \u2014 " + termLabel);
                 System.out.println("-".repeat(tableWidth));
 
-                //Store course for array
                 String[] courseNumbers = new String[courseCount];
                 String[] titles        = new String[courseCount];
                 String[] grades        = new String[courseCount];
@@ -409,11 +422,9 @@ public class Main {
                     titles[k]        = getTextValue(course, "DescriptiveTitle");
                     grades[k]        = getTextValue(course, "Grade");
 
-                    // Truncate long titles to keep table clean
                     if (titles[k].length() > 60) titles[k] = titles[k].substring(0, 57) + "...";
                 }
 
-                //Print rows
                 for (int k = 0; k < courseCount; k++) {
                     if (showGrades) {
                         System.out.printf("  %-15s | %-60s | %-10s%n",
@@ -431,10 +442,6 @@ public class Main {
         System.out.println("=".repeat(tableWidth));
     }
 
-    /**
-     * Searches the XML document for a specific Year and Term, then prints all courses
-     * in a neatly formatted console table.
-     */
     public static void displayCoursesTable(Document doc, String yearLevel, String termName) {
         NodeList yearNodes = doc.getElementsByTagName("Year");
         boolean termFound = false;
@@ -452,12 +459,10 @@ public class Main {
                         termFound = true;
                         System.out.println("\n===== Courses for Year " + yearLevel + ", " + termElement.getAttribute("name") + " =====");
 
-                        // Print Table Header
                         System.out.printf("%-15s | %-65s | %-5s | %-20s | %-5s%n",
                                 "Course Number", "Descriptive Title", "Units", "Prerequisites", "Grade");
-                        System.out.println("-".repeat(125)); // Java 11+ feature
+                        System.out.println("-".repeat(125));
 
-                        // Extract and print course details
                         NodeList courseNodes = termElement.getElementsByTagName("Course");
                         for (int k = 0; k < courseNodes.getLength(); k++) {
                             Element course = (Element) courseNodes.item(k);
@@ -468,7 +473,6 @@ public class Main {
                             String prereq = getTextValue(course, "Prerequisites");
                             String grade = getTextValue(course, "Grade");
 
-                            // Truncate long titles/prerequisites slightly to keep the table clean if necessary
                             if (title.length() > 65) title = title.substring(0, 62) + "...";
                             if (prereq.length() > 20) prereq = prereq.substring(0, 17) + "...";
 
@@ -509,9 +513,6 @@ public class Main {
     }
 }
 
-/**
- * Updates the <Grade> tag of a specific course using its Course Number.
- */
 class GradeEditor {
     private Document doc;
     private String filePath;
@@ -530,7 +531,13 @@ class GradeEditor {
         System.out.println("<3> Cancel");
         System.out.print("Select an option: ");
 
-        String choice = Main.getFormattedInput(kbd);
+        String choice;
+        while (true) {
+            choice = Main.getFormattedInput(kbd);
+            if (choice.matches("[1-3]")) break;
+            System.out.print("Invalid choice. Select an option (1-3): ");
+        }
+
         switch (choice) {
             case "1" -> {
                 String courseNum;
@@ -542,7 +549,7 @@ class GradeEditor {
                     if (courseExists(courseNum)) {
                         String newGrade;
                         while (true) {
-                            System.out.print("Enter new Grade (0-99): ");
+                            System.out.print("Enter new Grade (65-99): ");
                             newGrade = Main.getFormattedInput(kbd);
 
                             if (isValidGradeValue(newGrade)) {
@@ -550,7 +557,7 @@ class GradeEditor {
                                 saveXMLFile();
                                 break;
                             } else {
-                                System.out.println("\n>>> Invalid Input: Grade must be a number between 0 and 99.");
+                                System.out.println("\n>>> Invalid Input: Grade must be a number between 65 and 99.");
                             }
                         }
                         break;
@@ -592,7 +599,6 @@ class GradeEditor {
                 }
             }
             case "3" -> {
-                // Returns immediately to the Main Menu
             }
             default -> System.out.println("Invalid choice.");
         }
@@ -601,7 +607,7 @@ class GradeEditor {
     private boolean isValidGradeValue(String input) {
         try {
             int grade = Integer.parseInt(input);
-            return grade >= 0 && grade <= 99;
+            return grade >= 65 && grade <= 99;
         } catch (NumberFormatException e) {
             return false;
         }
