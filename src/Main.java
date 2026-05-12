@@ -20,10 +20,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-
-// exceptions
-
-
 public class Main {
     // Class variables
     public static Scanner kbd = new Scanner(System.in);
@@ -42,7 +38,6 @@ public class Main {
         }
         return input.trim().toUpperCase().replaceAll("\\s+", " ");
     }
-
 
     public static void main(String[] args) {
         Document doc;
@@ -99,8 +94,9 @@ public class Main {
             return;
         }
 
-        // 2. Display dashboard
+        // 2. Display dashboard variables
         displayDashboard();
+        System.out.println("Welcome, " + name + "!");
 
         // 3. Show Main Menu
         mainMenu(doc);
@@ -109,10 +105,8 @@ public class Main {
     // 1. USER INPUT
     public static void userInput(){
 
-
-
         // Welcome/Input Screen
-        System.out.println("--------------------------------------");
+        System.out.println("======================================");
         System.out.println("Welcome to your Checklist Monitoring Application!");
         System.out.println("Please enter your information.");
 
@@ -123,7 +117,7 @@ public class Main {
 
         // Year level
         System.out.println("Year Level");
-        String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year"};
+        String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year", "Fifth Year"};
         for (int i = 0; i < yearArray.length; i++) {
             System.out.println("<" + (i + 1) + "> " + yearArray[i]);
         }
@@ -160,13 +154,6 @@ public class Main {
 
     // 2. DASHBOARD
     public static void displayDashboard(){
-
-        System.out.println("Welcome to your Checklist Monitoring Application! \n" +
-                "===============DASHBOARD===============");
-
-        // Display name
-        System.out.println("NAME: " + name);
-
         // Switch statements for current year
         switch (yearInput) {
             case "1" -> currentYear = "First Year";
@@ -174,20 +161,22 @@ public class Main {
             case "3" -> currentYear = "Third Year";
             case "4" -> currentYear = "Fourth Year";
             case "5" -> currentYear = "Fifth Year";
-            default -> System.out.println("Unrecognized year. Defaulting to Year 1.");
+            default -> {
+                currentYear = "First Year";
+                System.out.println("Unrecognized year. Defaulting to Year 1.");
+            }
         }
-        System.out.println("CURRENT YEAR: " + currentYear); // Display current year
 
         // Switch statements for current term
         switch (termInput) {
             case "1" -> currentTerm = "First Semester";
             case "2" -> currentTerm = "Second Semester";
             case "3" -> currentTerm = "Short Term";
-            default -> System.out.println("Unrecognized term. Defaulting to Semester 1.");
+            default -> {
+                currentTerm = "First Semester";
+                System.out.println("Unrecognized term. Defaulting to Semester 1.");
+            }
         }
-        System.out.println("CURRENT TERM: " + currentTerm); // Display current term
-
-        System.out.println("Welcome, " + name + "!" + " (" + currentYear + ", " + currentTerm + ")");
     }
 
     // 3. MAIN MENU
@@ -196,6 +185,11 @@ public class Main {
         boolean running = true;
 
         while (running) {
+            System.out.println("\n===== DASHBOARD =====");
+            System.out.println("NAME: " + name);
+            System.out.println("YEAR: " + currentYear);
+            System.out.println("TERM: " + currentTerm);
+
             System.out.println("\n===== MAIN MENU =====");
             System.out.println("<0> Reset data");
             System.out.println("<1> Show subjects for each school term");
@@ -278,7 +272,7 @@ public class Main {
         String xmlYear = yearInput;
         String xmlTerm = getXmlTerm();
 
-        System.out.println("\n--- Entering Grades for " + currentYear + " | " + currentTerm + " ---");
+        System.out.println("\n===== Entering Grades for " + currentYear + " | " + currentTerm + " =====");
         NodeList yearNodes = doc.getElementsByTagName("Year");
         boolean termFound = false;
 
@@ -437,7 +431,6 @@ public class Main {
         System.out.println("=".repeat(tableWidth));
     }
 
-
     /**
      * Searches the XML document for a specific Year and Term, then prints all courses
      * in a neatly formatted console table.
@@ -457,7 +450,7 @@ public class Main {
 
                     if (termElement.getAttribute("name").equalsIgnoreCase(termName)) {
                         termFound = true;
-                        System.out.println("\n--- Courses for Year " + yearLevel + ", " + termElement.getAttribute("name") + " ---");
+                        System.out.println("\n===== Courses for Year " + yearLevel + ", " + termElement.getAttribute("name") + " =====");
 
                         // Print Table Header
                         System.out.printf("%-15s | %-65s | %-5s | %-20s | %-5s%n",
@@ -531,79 +524,77 @@ class GradeEditor {
     }
 
     public void showGradeMenu() {
-        boolean inGradeMenu = true;
-        while (inGradeMenu) {
-            System.out.println("\n--- GRADE MANAGEMENT ---");
-            System.out.println("1. Edit Grade");
-            System.out.println("2. Clear Grade");
-            System.out.println("3. Save and Back to Main");
-            System.out.print("Select an option: ");
+        System.out.println("\n===== GRADE MANAGEMENT =====");
+        System.out.println("<1> Edit Grade");
+        System.out.println("<2> Clear Grade");
+        System.out.println("<3> Cancel");
+        System.out.print("Select an option: ");
 
-            String choice = Main.getFormattedInput(kbd);
-            switch (choice) {
-                case "1" -> {
-                    String courseNum;
-                    while (true) {
-                        System.out.print("Enter Course Number to edit (e.g., 'CS 111') or 'exit' to cancel: ");
-                        courseNum = Main.getFormattedInput(kbd);
-                        if (courseNum.equalsIgnoreCase("exit")) break;
+        String choice = Main.getFormattedInput(kbd);
+        switch (choice) {
+            case "1" -> {
+                String courseNum;
+                while (true) {
+                    System.out.print("Enter Course Number to edit (e.g., 'CS 111') or 'exit' to cancel: ");
+                    courseNum = Main.getFormattedInput(kbd);
+                    if (courseNum.equalsIgnoreCase("exit")) break;
 
-                        if (courseExists(courseNum)) {
-                            String newGrade;
-                            while (true) {
-                                System.out.print("Enter new Grade (0-99): ");
-                                newGrade = Main.getFormattedInput(kbd);
+                    if (courseExists(courseNum)) {
+                        String newGrade;
+                        while (true) {
+                            System.out.print("Enter new Grade (0-99): ");
+                            newGrade = Main.getFormattedInput(kbd);
 
-                                if (isValidGradeValue(newGrade)) {
-                                    updateGrade(courseNum, newGrade);
-                                    break;
-                                } else {
-                                    System.out.println("\n>>> Invalid Input: Grade must be a number between 0 and 99.");
-                                }
+                            if (isValidGradeValue(newGrade)) {
+                                updateGrade(courseNum, newGrade);
+                                saveXMLFile();
+                                break;
+                            } else {
+                                System.out.println("\n>>> Invalid Input: Grade must be a number between 0 and 99.");
                             }
-                            break;
-                        } else {
-                            System.out.println("\n>>> Error: Course '" + courseNum + "' not found. (Check your spacing)");
                         }
+                        break;
+                    } else {
+                        System.out.println("\n>>> Error: Course '" + courseNum + "' not found. (Check your spacing)");
                     }
                 }
-                case "2" -> {
-                    while (true) {
-                        System.out.print("Enter Course Number to clear or 'exit' to cancel: ");
-                        String courseNum = Main.getFormattedInput(kbd);
-                        if (courseNum.equalsIgnoreCase("exit")) break;
-
-                        if (courseExists(courseNum)) {
-                            boolean validResponse = false;
-                            while (!validResponse) {
-                                System.out.print("Clear the grade for " + courseNum + "? (Y/N): ");
-                                String confirm = Main.getFormattedInput(kbd);
-
-                                if (confirm.equalsIgnoreCase("Y")) {
-                                    updateGrade(courseNum, "");
-                                    System.out.println(">>> Grade cleared.\n");
-                                    validResponse = true;
-                                }
-                                else if (confirm.equalsIgnoreCase("N")) {
-                                    System.out.println(">>> Clear operation cancelled.");
-                                    validResponse = true;
-                                }
-                                else {
-                                    System.out.println("\n>>> Invalid input! Please enter only 'Y' for Yes or 'N' for No.");
-                                }
-                            }
-                            break;
-                        } else {
-                            System.out.println("\n>>> Error: Course '" + courseNum + "' not found.");
-                        }
-                    }
-                }
-                case "3" -> {
-                    saveXMLFile();
-                    inGradeMenu = false;
-                }
-                default -> System.out.println("Invalid choice.");
             }
+            case "2" -> {
+                while (true) {
+                    System.out.print("Enter Course Number to clear or 'exit' to cancel: ");
+                    String courseNum = Main.getFormattedInput(kbd);
+                    if (courseNum.equalsIgnoreCase("exit")) break;
+
+                    if (courseExists(courseNum)) {
+                        boolean validResponse = false;
+                        while (!validResponse) {
+                            System.out.print("Clear the grade for " + courseNum + "? (Y/N): ");
+                            String confirm = Main.getFormattedInput(kbd);
+
+                            if (confirm.equalsIgnoreCase("Y")) {
+                                updateGrade(courseNum, "");
+                                System.out.println(">>> Grade cleared.\n");
+                                saveXMLFile();
+                                validResponse = true;
+                            }
+                            else if (confirm.equalsIgnoreCase("N")) {
+                                System.out.println(">>> Clear operation cancelled.");
+                                validResponse = true;
+                            }
+                            else {
+                                System.out.println("\n>>> Invalid input! Please enter only 'Y' for Yes or 'N' for No.");
+                            }
+                        }
+                        break;
+                    } else {
+                        System.out.println("\n>>> Error: Course '" + courseNum + "' not found.");
+                    }
+                }
+            }
+            case "3" -> {
+                // Returns immediately to the Main Menu
+            }
+            default -> System.out.println("Invalid choice.");
         }
     }
 
