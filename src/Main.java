@@ -35,6 +35,14 @@ public class Main {
     public static String filePath = "src/Data.xml";
     public static String userInfo = "src/userinfo.txt";
 
+    public static String getFormattedInput(Scanner scanner) {
+        String input = scanner.nextLine();
+        if (input == null || input.isEmpty()) {
+            return "";
+        }
+        return input.trim().toUpperCase().replaceAll("\\s+", " ");
+    }
+
 
     public static void main(String[] args) {
         Document doc;
@@ -109,7 +117,7 @@ public class Main {
         System.out.println("Please enter your information.");
 
         System.out.print("Enter name: ");
-        name = kbd.nextLine();
+        name = getFormattedInput(kbd);
 
         System.out.println();
 
@@ -123,7 +131,7 @@ public class Main {
 
         // User will select year level
         System.out.print("Choose Year Level: ");
-        yearInput = kbd.nextLine();
+        yearInput = getFormattedInput(kbd);
         System.out.println();
 
         // Current term
@@ -136,7 +144,7 @@ public class Main {
 
         // User will select current term
         System.out.print("Choose Current Term: ");
-        termInput = kbd.nextLine();
+        termInput = getFormattedInput(kbd);
 
         System.out.println();
 
@@ -186,7 +194,7 @@ public class Main {
     public static void mainMenu(Document doc){
         String resetDataInput = "";
         boolean running = true;
-        
+
         while (running) {
             System.out.println("\n===== MAIN MENU =====");
             System.out.println("<0> Reset data");
@@ -197,7 +205,7 @@ public class Main {
             System.out.println("<5> Edit personal information");
             System.out.println("<6> Save and exit");
             System.out.print("Select an option: ");
-            String choice = kbd.nextLine();
+            String choice = getFormattedInput(kbd);
 
             switch (choice) {
                 case "0" -> {
@@ -206,19 +214,19 @@ public class Main {
                     System.out.println("<2> NO, go back to the Main Menu.");
                     System.out.println();
                     System.out.print("Select an option: ");
-                    resetDataInput = kbd.nextLine();
+                    resetDataInput = getFormattedInput(kbd);
 
                     switch (resetDataInput){
                         case "1" -> {
                             System.out.println("Resetting data...");
                             try (PrintWriter pw = new PrintWriter(new FileWriter(userInfo))) {
-                                pw.print(""); 
+                                pw.print("");
                             } catch (IOException e) {
                                 System.out.println("Error clearing user info.");
                             }
-                            
+
                             try {
-                                Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING); 
+                                Files.copy(Paths.get("src/Data_copy.xml"), Paths.get("src/Data.xml"), StandardCopyOption.REPLACE_EXISTING);
                             } catch (IOException e) { System.out.println("Error saving user info."); }
 
                             name = "";
@@ -278,14 +286,14 @@ public class Main {
             Element yearElement = (Element) yearNodes.item(i);
             if (yearElement.getAttribute("level").equals(xmlYear)) {
                 NodeList termNodes = yearElement.getElementsByTagName("Term");
-                
+
                 for (int j = 0; j < termNodes.getLength(); j++) {
                     Element termElement = (Element) termNodes.item(j);
-                    
+
                     if (termElement.getAttribute("name").equalsIgnoreCase(xmlTerm)) {
                         termFound = true;
                         NodeList courseNodes = termElement.getElementsByTagName("Course");
-                        
+
                         for (int k = 0; k < courseNodes.getLength(); k++) {
                             Element course = (Element) courseNodes.item(k);
                             String cNumber = getTextValue(course, "CourseNumber");
@@ -293,7 +301,7 @@ public class Main {
                             String currentGrade = getTextValue(course, "Grade");
 
                             System.out.print("Enter grade for " + cNumber + " - " + cTitle + " (Current: " + currentGrade + ") [Press Enter to skip]: ");
-                            String newGrade = kbd.nextLine();
+                            String newGrade = getFormattedInput(kbd);
 
                             if (!newGrade.trim().isEmpty()) {
                                 NodeList gradeList = course.getElementsByTagName("Grade");
@@ -313,7 +321,7 @@ public class Main {
                 }
             }
         }
-        
+
         if (!termFound) {
             System.out.println("Could not find entries for Year: " + xmlYear + " and Term: " + xmlTerm);
         }
@@ -326,7 +334,7 @@ public class Main {
         System.out.println("<2> View subjects with grades");
         System.out.print("Select an option: ");
 
-        String viewChoice = kbd.nextLine().trim();
+        String viewChoice = getFormattedInput(kbd);
 
         switch (viewChoice) {
             case "1" -> displayAllTerms(doc, false);
@@ -531,20 +539,20 @@ class GradeEditor {
             System.out.println("3. Save and Back to Main");
             System.out.print("Select an option: ");
 
-            String choice = kbd.nextLine();
+            String choice = Main.getFormattedInput(kbd);
             switch (choice) {
                 case "1" -> {
                     String courseNum;
                     while (true) {
                         System.out.print("Enter Course Number to edit (e.g., 'CS 111') or 'exit' to cancel: ");
-                        courseNum = kbd.nextLine();
+                        courseNum = Main.getFormattedInput(kbd);
                         if (courseNum.equalsIgnoreCase("exit")) break;
 
                         if (courseExists(courseNum)) {
                             String newGrade;
                             while (true) {
                                 System.out.print("Enter new Grade (0-99): ");
-                                newGrade = kbd.nextLine();
+                                newGrade = Main.getFormattedInput(kbd);
 
                                 if (isValidGradeValue(newGrade)) {
                                     updateGrade(courseNum, newGrade);
@@ -562,14 +570,14 @@ class GradeEditor {
                 case "2" -> {
                     while (true) {
                         System.out.print("Enter Course Number to clear or 'exit' to cancel: ");
-                        String courseNum = kbd.nextLine();
+                        String courseNum = Main.getFormattedInput(kbd);
                         if (courseNum.equalsIgnoreCase("exit")) break;
 
                         if (courseExists(courseNum)) {
                             boolean validResponse = false;
                             while (!validResponse) {
                                 System.out.print("Clear the grade for " + courseNum + "? (Y/N): ");
-                                String confirm = kbd.nextLine().trim();
+                                String confirm = Main.getFormattedInput(kbd);
 
                                 if (confirm.equalsIgnoreCase("Y")) {
                                     updateGrade(courseNum, "");
