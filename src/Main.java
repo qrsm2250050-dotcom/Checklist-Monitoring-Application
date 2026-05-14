@@ -541,13 +541,13 @@ public class Main {
         String[] termKeys = {"1st Semester", "2nd Semester", "Short Term"};
         String[] termLabels = {"FIRST SEMESTER", "SECOND SEMESTER", "SHORT TERM"};
 
-        int tableWidth = showGrades ? 100 : 85;
+        int tableWidth = showGrades ? 115 : 100;
 
         System.out.println("\n" + "=".repeat(tableWidth));
         if (showGrades) {
-            System.out.printf("  %-15s | %-60s | %-10s%n", "Course Number", "Descriptive Title", "Grade");
+            System.out.printf("  %-15s | %-60s | %-10s | %-10s%n", "Course Number", "Descriptive Title", "Grade","Units");
         } else {
-            System.out.printf("  %-15s | %-60s%n", "Course Number", "Descriptive Title");
+            System.out.printf("  %-15s | %-60s | %-10s%n", "Course Number", "Descriptive Title","Units");
         }
         System.out.println("=".repeat(tableWidth));
 
@@ -590,6 +590,7 @@ public class Main {
                 String[] courseNumbers = new String[courseCount];
                 String[] titles = new String[courseCount];
                 String[] grades = new String[courseCount];
+                String[] units = new String[courseCount];
 
                 for (int k = 0; k < courseCount; k++) {
                     Element course = (Element) courseNodes.item(k);
@@ -597,17 +598,18 @@ public class Main {
                     courseNumbers[k] = getTextValue(course, "CourseNumber");
                     titles[k] = getTextValue(course, "DescriptiveTitle");
                     grades[k] = getTextValue(course, "Grade");
+                    units[k] = getTextValue(course, "Units");
 
                     if (titles[k].length() > 60) titles[k] = titles[k].substring(0, 57) + "...";
                 }
 
                 for (int k = 0; k < courseCount; k++) {
                     if (showGrades) {
-                        System.out.printf("  %-15s | %-60s | %-10s%n",
-                                courseNumbers[k], titles[k], grades[k]);
+                        System.out.printf("  %-15s | %-60s | %-10s | %-10s%n",
+                                courseNumbers[k], titles[k], grades[k], units[k]);
                     } else {
-                        System.out.printf("  %-15s | %-60s%n",
-                                courseNumbers[k], titles[k]);
+                        System.out.printf("  %-15s | %-60s | %-10s%n",
+                                courseNumbers[k], titles[k], units[k]);
                     }
                 }
 
