@@ -247,7 +247,7 @@ public class Main {
                     }
                 }
                 case "1" -> showAllSubjects(doc);
-                case "2" -> displayCoursesTable(doc, yearInput, getXmlTerm());
+                case "2" -> displayCoursesTable(doc, getXmlYear(), getXmlTerm());
                 case "3" -> enterGradesCurrentTerm(doc);
                 case "4" -> {
                     GradeEditor editor = new GradeEditor(doc, filePath, kbd);
@@ -279,6 +279,16 @@ public class Main {
             case "2" -> "2nd Semester";
             case "3" -> "Short Term";
             default -> "1st Semester";
+        };
+    }
+
+    private static String getXmlYear() {
+        return switch (yearInput) {
+            case "First Year" -> "1";
+            case "Second Year" -> "2";
+            case "Third Year" -> "3";
+            case "Fourth Year" -> "4";
+            default -> "1";
         };
     }
 
@@ -343,7 +353,7 @@ public class Main {
         if (!termFound) {
             System.out.println("Could not find entries for Year: " + xmlYear + " and Term: " + xmlTerm);
         }
-        displayCoursesTable(doc, yearInput, getXmlTerm());
+        displayCoursesTable(doc, getXmlYear(), getXmlTerm());
     }
 
     public static void addCourse(Document doc) {
