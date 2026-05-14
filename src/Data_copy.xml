@@ -561,12 +561,4 @@
             </Course>
         </Term>
     </Year>
-    <Year level="5">
-        <Term name="1st Semester">
-        </Term>
-        <Term name="2nd Semester">
-        </Term>
-        <Term name="Short Term">
-        </Term>
-    </Year>
 </Data>
