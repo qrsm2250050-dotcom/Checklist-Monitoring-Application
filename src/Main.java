@@ -114,7 +114,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Year Level");
-        String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year", "Fifth Year"};
+        String[] yearArray = {"First Year", "Second Year", "Third Year", "Fourth Year"};
         for (int i = 0; i < yearArray.length; i++) {
             System.out.println("<" + (i + 1) + "> " + yearArray[i]);
         }
@@ -123,8 +123,8 @@ public class Main {
         System.out.print("Choose Year Level: ");
         while (true) {
             yearInput = getFormattedInput(kbd);
-            if (yearInput.matches("[1-5]")) break;
-            System.out.print("Invalid input. Choose Year Level (1-5): ");
+            if (yearInput.matches("[1-4]")) break;
+            System.out.print("Invalid input. Choose Year Level (1-4): ");
         }
         System.out.println();
 
@@ -159,7 +159,6 @@ public class Main {
             case "2" -> currentYear = "Second Year";
             case "3" -> currentYear = "Third Year";
             case "4" -> currentYear = "Fourth Year";
-            case "5" -> currentYear = "Fifth Year";
             default -> {
                 currentYear = "First Year";
                 System.out.println("Unrecognized year. Defaulting to Year 1.");
@@ -366,14 +365,8 @@ public class Main {
             }
         } while (descriptiveTitle.isEmpty());
 
-        String preReq;
-        do {
-            System.out.print("Prerequisites (separate by comma): ");
-            preReq = kbd.nextLine();
-            if (preReq.isEmpty()) {
-                System.out.println("Input cannot be empty. Please try again.");
-            }
-        } while (preReq.isEmpty());
+        System.out.print("Prerequisites (separate by comma): ");
+        String preReq = kbd.nextLine();
 
         String[] preq = preReq.split(",");
         for (String p : preq) {
@@ -416,9 +409,6 @@ public class Main {
                     xmlYear = "4";
                     break;
 
-                case "Fifth Year":
-                    xmlYear = "5";
-                    break;
             }
 
             String xmlTerm = "";

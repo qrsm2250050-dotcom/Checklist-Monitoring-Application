@@ -1,1 +1,572 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Data><Year level="1"><Term name="1st Semester"><Course><CourseNumber>CS 111</CourseNumber><DescriptiveTitle>INTRODUCTION TO COMPUTING</DescriptiveTitle><Units>2</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 111L</CourseNumber><DescriptiveTitle>INTRODUCTION TO COMPUTING (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 112</CourseNumber><DescriptiveTitle>COMPUTER PROGRAMMING 1</DescriptiveTitle><Units>2</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 112L</CourseNumber><DescriptiveTitle>COMPUTER PROGRAMMING 1 (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 113</CourseNumber><DescriptiveTitle>DISCRETE STRUCTURES</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GMATH</CourseNumber><DescriptiveTitle>MATHEMATICS IN THE MODERN WORLD</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GART</CourseNumber><DescriptiveTitle>ART APPRECIATION</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GHIST</CourseNumber><DescriptiveTitle>READINGS IN PHILIPPINE HISTORY</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>FIT HW</CourseNumber><DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (HEALTH AND WELLNESS)</DescriptiveTitle><Units>2</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CFE 101</CourseNumber><DescriptiveTitle>GOD'S JOURNEY WITH HIS PEOPLE</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course></Term><Term name="Short Term"><Course><CourseNumber>CS 131</CourseNumber><DescriptiveTitle>SOFTWARE MODELING AND ANALYSIS</DescriptiveTitle><Units>3</Units><Prerequisites>CS 111</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 132</CourseNumber><DescriptiveTitle>MATHEMATICS FOR COMPUTER SCIENCE</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course></Term><Term name="2nd Semester"><Course><CourseNumber>CS 121</CourseNumber><DescriptiveTitle>DIGITAL LOGIC DESIGN</DescriptiveTitle><Units>3</Units><Prerequisites>CS 111</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 122</CourseNumber><DescriptiveTitle>COMPUTER PROGRAMMING 2</DescriptiveTitle><Units>2</Units><Prerequisites>CS 112</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 122L</CourseNumber><DescriptiveTitle>COMPUTER PROGRAMMING 2 (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 112</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 123</CourseNumber><DescriptiveTitle>ARCHITECTURE AND ORGANIZATION</DescriptiveTitle><Units>2</Units><Prerequisites>CS 112</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 123L</CourseNumber><DescriptiveTitle>ARCHITECTURE AND ORGANIZATION (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 112</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GSELF</CourseNumber><DescriptiveTitle>UNDERSTANDING THE SELF</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GPCOM</CourseNumber><DescriptiveTitle>PURPOSIVE COMMUNICATION</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GENVI</CourseNumber><DescriptiveTitle>ENVIRONMENTAL SCIENCE</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>FIT CS</CourseNumber><DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (COMBATIVE SPORTS)</DescriptiveTitle><Units>2</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CFE 102</CourseNumber><DescriptiveTitle>CHRISTIAN MORALITY IN OUR TIMES</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course></Term></Year><Year level="2"><Term name="1st Semester"><Course><CourseNumber>CS 211</CourseNumber><DescriptiveTitle>DATA STRUCTURES</DescriptiveTitle><Units>2</Units><Prerequisites>CS 112, CS 113, CS 212 (CO-REQUISITE)</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 211L</CourseNumber><DescriptiveTitle>DATA STRUCTURES (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 112, CS 113, CS 212 (CO-REQUISITE)</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 212</CourseNumber><DescriptiveTitle>OPERATING SYSTEMS</DescriptiveTitle><Units>2</Units><Prerequisites>CS 123, CS 211 (CO-REQUISITE)</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 212L</CourseNumber><DescriptiveTitle>OPERATING SYSTEMS (LAB)</DescriptiveTitle><Units/><Prerequisites>CS 123, CS 211L (CO-REQUISITE)</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 213</CourseNumber><DescriptiveTitle>HUMAN COMPUTER INTERACTION</DescriptiveTitle><Units/><Prerequisites>CS 122</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GSTS</CourseNumber><DescriptiveTitle>SCIENCE, TECHNOLOGY, AND SOCIETY</DescriptiveTitle><Units/><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GRIVA</CourseNumber><DescriptiveTitle>READING VISUAL ART</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>NSTP-CWTS 1</CourseNumber><DescriptiveTitle>FOUNDATIONS OF SERVICE</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>FIT OA</CourseNumber><DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS OUTDOOR AND ADVENTURE</DescriptiveTitle><Units>2</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CFE 103</CourseNumber><DescriptiveTitle>CATHOLIC FOUNDATION OF MISSION</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course></Term><Term name="Short Term"><Course><CourseNumber>CS 231</CourseNumber><DescriptiveTitle>COMPUTER NETWORKS</DescriptiveTitle><Units>2</Units><Prerequisites>CS 212</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 231L</CourseNumber><DescriptiveTitle>COMPUTER NETWORKS LAB</DescriptiveTitle><Units/><Prerequisites>CS 212</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GRIZAL</CourseNumber><DescriptiveTitle>THE LIFE AND WORKS OF RIZAL</DescriptiveTitle><Units/><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GENTREP</CourseNumber><DescriptiveTitle>THE ENTREPRENEURIAL MIND</DescriptiveTitle><Units/><Prerequisites/><Grade>NO GRADES YET</Grade></Course></Term><Term name="2nd Semester"><Course><CourseNumber>CS 221</CourseNumber><DescriptiveTitle>INFORMATION MANAGEMENT</DescriptiveTitle><Units>2</Units><Prerequisites>CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 221L</CourseNumber><DescriptiveTitle>INFORMATION MANAGEMENT (LAB)</DescriptiveTitle><Units/><Prerequisites>CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 222</CourseNumber><DescriptiveTitle>COMPUTER PROGRAMMING 3</DescriptiveTitle><Units>2</Units><Prerequisites>CS 122</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 222L</CourseNumber><DescriptiveTitle>COMPUTER PROGRAMMING 3 (LAB)</DescriptiveTitle><Units/><Prerequisites>CS 122</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 223</CourseNumber><DescriptiveTitle>AUTOMATA AND FORMAL LANGUAGE</DescriptiveTitle><Units/><Prerequisites>CS 132</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GETHICS</CourseNumber><DescriptiveTitle>ETHICS</DescriptiveTitle><Units/><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>GCWORLD</CourseNumber><DescriptiveTitle>THE CONTEMPORARY WORLD</DescriptiveTitle><Units/><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>NSTP-CWTS 2</CourseNumber><DescriptiveTitle>SOCIAL AWARENESS AND EMPOWERMENT FOR SERVICE</DescriptiveTitle><Units/><Prerequisites>NSTP CWTS 1</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>FIT AQ</CourseNumber><DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (AQUATICS)</DescriptiveTitle><Units>2</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CFE 104</CourseNumber><DescriptiveTitle>CICM MISSIONARY IDENTITY</DescriptiveTitle><Units/><Prerequisites>CFE 103</Prerequisites><Grade>NO GRADES YET</Grade></Course></Term></Year><Year level="3"><Term name="1st Semester"><Course><CourseNumber>CS 311</CourseNumber><DescriptiveTitle>APPLICATIONS DEVELOPMENT</DescriptiveTitle><Units>2</Units><Prerequisites>CS 122</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 311L</CourseNumber><DescriptiveTitle>APPLICATIONS DEVELOPMENT (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 122</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 312</CourseNumber><DescriptiveTitle>WEB SYSTEMS DEVELOPMENT</DescriptiveTitle><Units>2</Units><Prerequisites>CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 312L</CourseNumber><DescriptiveTitle>WEB SYSTEMS DEVELOPMENT (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 313</CourseNumber><DescriptiveTitle>SOFTWARE ENGINEERING</DescriptiveTitle><Units>3</Units><Prerequisites>CS 131, CS 221</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 314</CourseNumber><DescriptiveTitle>SOCIAL AND PERSONAL DEVELOPMENT IN THE ICT WORKPLACE</DescriptiveTitle><Units>3</Units><Prerequisites>CS 111, GSELF</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 315</CourseNumber><DescriptiveTitle>TECHNOLOGY-ASSISTED PRESENTATION AND PRESENTATION</DescriptiveTitle><Units>3</Units><Prerequisites>CS 111, GPCOM</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CSM 316</CourseNumber><DescriptiveTitle>NUMERICAL METHODS FOR COMPUTER SCIENCE</DescriptiveTitle><Units>3</Units><Prerequisites>CS 132</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CFE 105A</CourseNumber><DescriptiveTitle>CICM IN ACTION: JUSTICE, PEACE, AND INTEGRITY OF CREATION, INDIGENOUS PEOPLES, AND INTERRELIGIOUS DIALOGUE</DescriptiveTitle><Units>1.5</Units><Prerequisites>CFE 103, CFE 104</Prerequisites><Grade>NO GRADES YET</Grade></Course></Term><Term name="2nd Semester"><Course><CourseNumber>CS 321</CourseNumber><DescriptiveTitle>ARTIFICIAL INTELLIGENCE</DescriptiveTitle><Units>3</Units><Prerequisites>CS 132, CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 322</CourseNumber><DescriptiveTitle>DATA SCIENCE</DescriptiveTitle><Units>2</Units><Prerequisites>CS 221</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 322L</CourseNumber><DescriptiveTitle>DATA SCIENCE (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 221</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 323</CourseNumber><DescriptiveTitle>MODELING AND SIMULATION</DescriptiveTitle><Units>2</Units><Prerequisites>CS 132, CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 323L</CourseNumber><DescriptiveTitle>MODELING AND SIMULATION (LAB)</DescriptiveTitle><Units>1</Units><Prerequisites>CS 132, CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 324</CourseNumber><DescriptiveTitle>METHODS OF RESEARCH IN COMPUTER SCIENCE</DescriptiveTitle><Units>3</Units><Prerequisites>3RD YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 325</CourseNumber><DescriptiveTitle>STRUCTURE OF PROGRAMMING LANGUAGES</DescriptiveTitle><Units>3</Units><Prerequisites>CS 211</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CFE 105B</CourseNumber><DescriptiveTitle>CICM IN ACTION ENVIRONMENTAL PLANNING AND MANAGEMENT AND DISASTER RISK REDUCTION MANAGEMENT</DescriptiveTitle><Units>1.5</Units><Prerequisites>CFE 105A</Prerequisites><Grade>NO GRADES YET</Grade></Course></Term><Term name="Short Term"><Course><CourseNumber>CS 331</CourseNumber><DescriptiveTitle>PRACTICUM</DescriptiveTitle><Units>6</Units><Prerequisites>4TH YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course></Term></Year><Year level="4"><Term name="1st Semester"><Course><CourseNumber>CFE 105A</CourseNumber><DescriptiveTitle>EMBRACING THE CICM MISSION</DescriptiveTitle><Units>1.5</Units><Prerequisites>CFE 105B</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 411</CourseNumber><DescriptiveTitle>CS THESIS 1</DescriptiveTitle><Units>3</Units><Prerequisites>CS 324</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 412</CourseNumber><DescriptiveTitle>INFORMATION ASSURANCE AND SECURITY</DescriptiveTitle><Units>3</Units><Prerequisites>CORE COURSES</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 413</CourseNumber><DescriptiveTitle>PROFESSIONAL PRACTICE AND CYBERETHICS</DescriptiveTitle><Units>3</Units><Prerequisites>GETHICS, CS 231</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CSE</CourseNumber><DescriptiveTitle>ELECTIVE 1</DescriptiveTitle><Units>3</Units><Prerequisites>3RD YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CSE</CourseNumber><DescriptiveTitle>ELECTIVE 2</DescriptiveTitle><Units>3</Units><Prerequisites>3RD YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course></Term><Term name="2nd Semester"><Course><CourseNumber>CFE 1060</CourseNumber><DescriptiveTitle>EMBRACING THE CICM MISSION</DescriptiveTitle><Units>1.5</Units><Prerequisites>CFE 106A</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 421</CourseNumber><DescriptiveTitle>CS THESIS 2</DescriptiveTitle><Units>3</Units><Prerequisites>CS THESIS 1</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CS 422</CourseNumber><DescriptiveTitle>DISTRIBUTED COMPUTING</DescriptiveTitle><Units>3</Units><Prerequisites>4TH YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>FOR LANG 1</CourseNumber><DescriptiveTitle>FOREIGN LANGUAGE 1</DescriptiveTitle><Units>3</Units><Prerequisites/><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CSE</CourseNumber><DescriptiveTitle>ELECTIVE 3</DescriptiveTitle><Units>3</Units><Prerequisites>4TH YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course><Course><CourseNumber>CSE</CourseNumber><DescriptiveTitle>ELECTIVE 4</DescriptiveTitle><Units>3</Units><Prerequisites>4TH YEAR STANDING</Prerequisites><Grade>NO GRADES YET</Grade></Course></Term></Year><Year level="5"><Term name="1st Semester"/><Term name="2nd Semester"><Course><CourseNumber>AE 121</CourseNumber><DescriptiveTitle>Intermediate Accounting 1</DescriptiveTitle><Units>3.0</Units><Prerequisites>AE 111,  AE 112</Prerequisites><Grade>99</Grade></Course></Term><Term name="Short Term"/></Year></Data>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Data>
+    <Year level="1">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CS 111</CourseNumber>
+                <DescriptiveTitle>INTRODUCTION TO COMPUTING</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 111L</CourseNumber>
+                <DescriptiveTitle>INTRODUCTION TO COMPUTING (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 112</CourseNumber>
+                <DescriptiveTitle>COMPUTER PROGRAMMING 1</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 112L</CourseNumber>
+                <DescriptiveTitle>COMPUTER PROGRAMMING 1 (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 113</CourseNumber>
+                <DescriptiveTitle>DISCRETE STRUCTURES</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GMATH</CourseNumber>
+                <DescriptiveTitle>MATHEMATICS IN THE MODERN WORLD</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GART</CourseNumber>
+                <DescriptiveTitle>ART APPRECIATION</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GHIST</CourseNumber>
+                <DescriptiveTitle>READINGS IN PHILIPPINE HISTORY</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT HW</CourseNumber>
+                <DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (HEALTH AND WELLNESS)</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 101</CourseNumber>
+                <DescriptiveTitle>GOD'S JOURNEY WITH HIS PEOPLE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+            <Course>
+                <CourseNumber>CS 131</CourseNumber>
+                <DescriptiveTitle>SOFTWARE MODELING AND ANALYSIS</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 111</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 132</CourseNumber>
+                <DescriptiveTitle>MATHEMATICS FOR COMPUTER SCIENCE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CS 121</CourseNumber>
+                <DescriptiveTitle>DIGITAL LOGIC DESIGN</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 111</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 122</CourseNumber>
+                <DescriptiveTitle>COMPUTER PROGRAMMING 2</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 112</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 122L</CourseNumber>
+                <DescriptiveTitle>COMPUTER PROGRAMMING 2 (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 112</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 123</CourseNumber>
+                <DescriptiveTitle>ARCHITECTURE AND ORGANIZATION</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 112</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 123L</CourseNumber>
+                <DescriptiveTitle>ARCHITECTURE AND ORGANIZATION (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 112</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GSELF</CourseNumber>
+                <DescriptiveTitle>UNDERSTANDING THE SELF</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GPCOM</CourseNumber>
+                <DescriptiveTitle>PURPOSIVE COMMUNICATION</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GENVI</CourseNumber>
+                <DescriptiveTitle>ENVIRONMENTAL SCIENCE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT CS</CourseNumber>
+                <DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (COMBATIVE SPORTS)</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 102</CourseNumber>
+                <DescriptiveTitle>CHRISTIAN MORALITY IN OUR TIMES</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+    </Year>
+    <Year level="2">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CS 211</CourseNumber>
+                <DescriptiveTitle>DATA STRUCTURES</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 112, CS 113, CS 212 (CO-REQUISITE)</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 211L</CourseNumber>
+                <DescriptiveTitle>DATA STRUCTURES (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 112, CS 113, CS 212 (CO-REQUISITE)</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 212</CourseNumber>
+                <DescriptiveTitle>OPERATING SYSTEMS</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 123, CS 211 (CO-REQUISITE)</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 212L</CourseNumber>
+                <DescriptiveTitle>OPERATING SYSTEMS (LAB)</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CS 123, CS 211L (CO-REQUISITE)</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 213</CourseNumber>
+                <DescriptiveTitle>HUMAN COMPUTER INTERACTION</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CS 122</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GSTS</CourseNumber>
+                <DescriptiveTitle>SCIENCE, TECHNOLOGY, AND SOCIETY</DescriptiveTitle>
+                <Units/>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GRIVA</CourseNumber>
+                <DescriptiveTitle>READING VISUAL ART</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>NSTP-CWTS 1</CourseNumber>
+                <DescriptiveTitle>FOUNDATIONS OF SERVICE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT OA</CourseNumber>
+                <DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS OUTDOOR AND ADVENTURE</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 103</CourseNumber>
+                <DescriptiveTitle>CATHOLIC FOUNDATION OF MISSION</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+            <Course>
+                <CourseNumber>CS 231</CourseNumber>
+                <DescriptiveTitle>COMPUTER NETWORKS</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 212</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 231L</CourseNumber>
+                <DescriptiveTitle>COMPUTER NETWORKS LAB</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CS 212</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GRIZAL</CourseNumber>
+                <DescriptiveTitle>THE LIFE AND WORKS OF RIZAL</DescriptiveTitle>
+                <Units/>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GENTREP</CourseNumber>
+                <DescriptiveTitle>THE ENTREPRENEURIAL MIND</DescriptiveTitle>
+                <Units/>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CS 221</CourseNumber>
+                <DescriptiveTitle>INFORMATION MANAGEMENT</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 221L</CourseNumber>
+                <DescriptiveTitle>INFORMATION MANAGEMENT (LAB)</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 222</CourseNumber>
+                <DescriptiveTitle>COMPUTER PROGRAMMING 3</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 122</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 222L</CourseNumber>
+                <DescriptiveTitle>COMPUTER PROGRAMMING 3 (LAB)</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CS 122</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 223</CourseNumber>
+                <DescriptiveTitle>AUTOMATA AND FORMAL LANGUAGE</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CS 132</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GETHICS</CourseNumber>
+                <DescriptiveTitle>ETHICS</DescriptiveTitle>
+                <Units/>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GCWORLD</CourseNumber>
+                <DescriptiveTitle>THE CONTEMPORARY WORLD</DescriptiveTitle>
+                <Units/>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>NSTP-CWTS 2</CourseNumber>
+                <DescriptiveTitle>SOCIAL AWARENESS AND EMPOWERMENT FOR SERVICE</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>NSTP CWTS 1</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FIT AQ</CourseNumber>
+                <DescriptiveTitle>PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (AQUATICS)</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 104</CourseNumber>
+                <DescriptiveTitle>CICM MISSIONARY IDENTITY</DescriptiveTitle>
+                <Units/>
+                <Prerequisites>CFE 103</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+    </Year>
+    <Year level="3">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CS 311</CourseNumber>
+                <DescriptiveTitle>APPLICATIONS DEVELOPMENT</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 122</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 311L</CourseNumber>
+                <DescriptiveTitle>APPLICATIONS DEVELOPMENT (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 122</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 312</CourseNumber>
+                <DescriptiveTitle>WEB SYSTEMS DEVELOPMENT</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 312L</CourseNumber>
+                <DescriptiveTitle>WEB SYSTEMS DEVELOPMENT (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 313</CourseNumber>
+                <DescriptiveTitle>SOFTWARE ENGINEERING</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 131, CS 221</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 314</CourseNumber>
+                <DescriptiveTitle>SOCIAL AND PERSONAL DEVELOPMENT IN THE ICT WORKPLACE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 111, GSELF</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 315</CourseNumber>
+                <DescriptiveTitle>TECHNOLOGY-ASSISTED PRESENTATION AND PRESENTATION</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 111, GPCOM</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSM 316</CourseNumber>
+                <DescriptiveTitle>NUMERICAL METHODS FOR COMPUTER SCIENCE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 132</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 105A</CourseNumber>
+                <DescriptiveTitle>CICM IN ACTION: JUSTICE, PEACE, AND INTEGRITY OF CREATION, INDIGENOUS PEOPLES, AND INTERRELIGIOUS DIALOGUE</DescriptiveTitle>
+                <Units>1.5</Units>
+                <Prerequisites>CFE 103, CFE 104</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CS 321</CourseNumber>
+                <DescriptiveTitle>ARTIFICIAL INTELLIGENCE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 132, CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 322</CourseNumber>
+                <DescriptiveTitle>DATA SCIENCE</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 221</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 322L</CourseNumber>
+                <DescriptiveTitle>DATA SCIENCE (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 221</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 323</CourseNumber>
+                <DescriptiveTitle>MODELING AND SIMULATION</DescriptiveTitle>
+                <Units>2</Units>
+                <Prerequisites>CS 132, CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 323L</CourseNumber>
+                <DescriptiveTitle>MODELING AND SIMULATION (LAB)</DescriptiveTitle>
+                <Units>1</Units>
+                <Prerequisites>CS 132, CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 324</CourseNumber>
+                <DescriptiveTitle>METHODS OF RESEARCH IN COMPUTER SCIENCE</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>3RD YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 325</CourseNumber>
+                <DescriptiveTitle>STRUCTURE OF PROGRAMMING LANGUAGES</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 211</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CFE 105B</CourseNumber>
+                <DescriptiveTitle>CICM IN ACTION ENVIRONMENTAL PLANNING AND MANAGEMENT AND DISASTER RISK REDUCTION MANAGEMENT</DescriptiveTitle>
+                <Units>1.5</Units>
+                <Prerequisites>CFE 105A</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="Short Term">
+            <Course>
+                <CourseNumber>CS 331</CourseNumber>
+                <DescriptiveTitle>PRACTICUM</DescriptiveTitle>
+                <Units>6</Units>
+                <Prerequisites>4TH YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>GPPC</CourseNumber>
+                <DescriptiveTitle>Philippine Popular Culture</DescriptiveTitle>
+                <Units>3.0</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+    </Year>
+    <Year level="4">
+        <Term name="1st Semester">
+            <Course>
+                <CourseNumber>CFE 105A</CourseNumber>
+                <DescriptiveTitle>EMBRACING THE CICM MISSION</DescriptiveTitle>
+                <Units>1.5</Units>
+                <Prerequisites>CFE 105B</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 411</CourseNumber>
+                <DescriptiveTitle>CS THESIS 1</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS 324</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 412</CourseNumber>
+                <DescriptiveTitle>INFORMATION ASSURANCE AND SECURITY</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CORE COURSES</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 413</CourseNumber>
+                <DescriptiveTitle>PROFESSIONAL PRACTICE AND CYBERETHICS</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>GETHICS, CS 231</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE</CourseNumber>
+                <DescriptiveTitle>ELECTIVE 1</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>3RD YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE</CourseNumber>
+                <DescriptiveTitle>ELECTIVE 2</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>3RD YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+        <Term name="2nd Semester">
+            <Course>
+                <CourseNumber>CFE 1060</CourseNumber>
+                <DescriptiveTitle>EMBRACING THE CICM MISSION</DescriptiveTitle>
+                <Units>1.5</Units>
+                <Prerequisites>CFE 106A</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 421</CourseNumber>
+                <DescriptiveTitle>CS THESIS 2</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>CS THESIS 1</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CS 422</CourseNumber>
+                <DescriptiveTitle>DISTRIBUTED COMPUTING</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>4TH YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>FOR LANG 1</CourseNumber>
+                <DescriptiveTitle>FOREIGN LANGUAGE 1</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites/>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE</CourseNumber>
+                <DescriptiveTitle>ELECTIVE 3</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>4TH YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+            <Course>
+                <CourseNumber>CSE</CourseNumber>
+                <DescriptiveTitle>ELECTIVE 4</DescriptiveTitle>
+                <Units>3</Units>
+                <Prerequisites>4TH YEAR STANDING</Prerequisites>
+                <Grade>NO GRADES YET</Grade>
+            </Course>
+        </Term>
+    </Year>
+</Data>
