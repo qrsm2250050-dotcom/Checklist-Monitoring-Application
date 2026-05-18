@@ -1,10 +1,4 @@
 <Data>
-    <User title="Student">
-        <Name></Name>
-        <Program></Program>
-        <Year></Year>
-        <Term></Term>
-    </User>
     <Year level="1">
         <Term name="1st Semester">
             <Course>
