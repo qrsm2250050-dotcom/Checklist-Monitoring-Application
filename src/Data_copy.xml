@@ -187,21 +187,21 @@
             <Course>
                 <CourseNumber>CS 212L</CourseNumber>
                 <DescriptiveTitle>OPERATING SYSTEMS (LAB)</DescriptiveTitle>
-                <Units/>
+                <Units>1</Units>
                 <Prerequisites>CS 123, CS 211L (CO-REQUISITE)</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>CS 213</CourseNumber>
                 <DescriptiveTitle>HUMAN COMPUTER INTERACTION</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites>CS 122</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>GSTS</CourseNumber>
                 <DescriptiveTitle>SCIENCE, TECHNOLOGY, AND SOCIETY</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites/>
                 <Grade>NO GRADES YET</Grade>
             </Course>
@@ -245,21 +245,21 @@
             <Course>
                 <CourseNumber>CS 231L</CourseNumber>
                 <DescriptiveTitle>COMPUTER NETWORKS LAB</DescriptiveTitle>
-                <Units/>
+                <Units>1</Units>
                 <Prerequisites>CS 212</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>GRIZAL</CourseNumber>
                 <DescriptiveTitle>THE LIFE AND WORKS OF RIZAL</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites/>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>GENTREP</CourseNumber>
                 <DescriptiveTitle>THE ENTREPRENEURIAL MIND</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites/>
                 <Grade>NO GRADES YET</Grade>
             </Course>
@@ -275,7 +275,7 @@
             <Course>
                 <CourseNumber>CS 221L</CourseNumber>
                 <DescriptiveTitle>INFORMATION MANAGEMENT (LAB)</DescriptiveTitle>
-                <Units/>
+                <Units>1</Units>
                 <Prerequisites>CS 211</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
@@ -289,35 +289,35 @@
             <Course>
                 <CourseNumber>CS 222L</CourseNumber>
                 <DescriptiveTitle>COMPUTER PROGRAMMING 3 (LAB)</DescriptiveTitle>
-                <Units/>
+                <Units>1</Units>
                 <Prerequisites>CS 122</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>CS 223</CourseNumber>
                 <DescriptiveTitle>AUTOMATA AND FORMAL LANGUAGE</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites>CS 132</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>GETHICS</CourseNumber>
                 <DescriptiveTitle>ETHICS</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites/>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>GCWORLD</CourseNumber>
                 <DescriptiveTitle>THE CONTEMPORARY WORLD</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites/>
                 <Grade>NO GRADES YET</Grade>
             </Course>
             <Course>
                 <CourseNumber>NSTP-CWTS 2</CourseNumber>
                 <DescriptiveTitle>SOCIAL AWARENESS AND EMPOWERMENT FOR SERVICE</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites>NSTP CWTS 1</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
@@ -331,7 +331,7 @@
             <Course>
                 <CourseNumber>CFE 104</CourseNumber>
                 <DescriptiveTitle>CICM MISSIONARY IDENTITY</DescriptiveTitle>
-                <Units/>
+                <Units>3</Units>
                 <Prerequisites>CFE 103</Prerequisites>
                 <Grade>NO GRADES YET</Grade>
             </Course>
