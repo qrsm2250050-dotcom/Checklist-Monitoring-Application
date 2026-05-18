@@ -1,5 +1,7 @@
-import java.io.*;
-import java.util.Scanner;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -7,19 +9,15 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import java.util.Scanner;
 
 public class Main {
     public static Scanner kbd = new Scanner(System.in);
-    public static String name = new String();
+    public static String name = "";
     public static String yearInput = "";
     public static String termInput = "";
     public static String currentYear = "1";
@@ -38,7 +36,7 @@ public class Main {
         return input.trim().toUpperCase().replaceAll("\\s+", " ");
     }
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Document doc;
 
         try {
@@ -254,7 +252,7 @@ public class Main {
                     editor.showGradeMenu();
                 }
 
-                case "5" ->  {
+                case "5" -> {
                     addCourse(doc);
                 }
 
@@ -555,9 +553,9 @@ public class Main {
 
         System.out.println("\n" + "=".repeat(tableWidth));
         if (showGrades) {
-            System.out.printf("  %-15s | %-60s | %-10s | %-10s%n", "Course Number", "Descriptive Title", "Grade","Units");
+            System.out.printf("  %-15s | %-60s | %-10s | %-10s%n", "Course Number", "Descriptive Title", "Grade", "Units");
         } else {
-            System.out.printf("  %-15s | %-60s | %-10s%n", "Course Number", "Descriptive Title","Units");
+            System.out.printf("  %-15s | %-60s | %-10s%n", "Course Number", "Descriptive Title", "Units");
         }
         System.out.println("=".repeat(tableWidth));
 
@@ -702,9 +700,9 @@ public class Main {
 }
 
 class GradeEditor {
-    private Document doc;
-    private String filePath;
-    private Scanner kbd;
+    private final Document doc;
+    private final String filePath;
+    private final Scanner kbd;
 
     public GradeEditor(Document doc, String filePath, Scanner kbd) {
         this.doc = doc;
